@@ -4,6 +4,7 @@ These dotfiles are an addition to the essential set from [thoughtbot](https://gi
 
 ## Installation
 ```
+git clone git@github.com:vadikace/dotfiles.git ~/dotfiles-local
 rake install
 ```
 
