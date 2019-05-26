@@ -1,0 +1,46 @@
+# Quick edits
+alias ea='vim ~/.aliases.local'
+alias ez='vim ~/.zshrc.local'
+alias eg='vim ~/.gitconfig'
+alias ev='vim ~/.vimrc'
+alias es='vim ~/bin/autosort'
+alias et='vim ~/.tmux.conf'
+
+# Hosts
+alias hosts='sudo vim /etc/hosts'
+
+# mv, rm, cp
+alias mv='command gmv --interactive --verbose'
+alias rm='command grm --interactive --verbose'
+alias cp='command gcp --interactive --verbose'
+
+# ls
+alias ls='gls -AFh --color --group-directories-first'
+
+# cat
+alias c='pygmentize -f terminal256 -O style=monokai -g'
+alias pcat='pygmentize -f terminal256 -O style=monokai -g'
+
+# Common shell functions
+alias psg='ps aux | grep '
+alias tf='tail -f'
+alias cl='clear'
+
+# File systems
+alias chmox='chmod +x'
+
+# Editors
+alias v='vim'
+alias a='atom'
+alias ws='open -a /Applications/WebStorm.app/ .'
+
+# Node
+alias ns='npm start'
+alias ni='npm install'
+
+# Yarn
+alias ys='yarn start'
+alias yi='yarn install'
+
+# Lock the screen (when going AFK)
+alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
