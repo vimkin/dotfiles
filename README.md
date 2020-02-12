@@ -22,6 +22,7 @@ You may find your favorite theme [here](https://iterm2colorschemes.com/) from hu
 My preffered themes:
 - [AdventureTime](https://raw.githubusercontent.com/mbadolato/iTerm2-Color-Schemes/master/schemes/AdventureTime.itermcolors)
 - [SpaceGray](https://raw.githubusercontent.com/mbadolato/iTerm2-Color-Schemes/master/schemes/SpaceGray.itermcolors)
+- [IntelliJ Darcula](https://gist.githubusercontent.com/kouphax/4628750/raw/051d8616f62cb3d942942001dace93c19d372525/Darcula.itermcolors)
 
 ## Atom sync
 In case you'd like to sync atom settings across multiple machines, `.atom` folder from this repo should be additionally symlinked to your home folder by doing this:
