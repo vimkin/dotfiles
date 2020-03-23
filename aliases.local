@@ -10,15 +10,14 @@ alias et='vim ~/.tmux.conf'
 alias hosts='sudo vim /etc/hosts'
 
 # mv, rm, cp
-alias mv='command gmv --interactive --verbose'
-alias rm='command grm --interactive --verbose'
-alias cp='command gcp --interactive --verbose'
+alias mv='command gmv --interactive'
+alias rm='command grm --interactive'
+alias cp='command gcp --interactive'
 
 # ls
 alias ls='gls -AFh --color --group-directories-first'
 
 # cat
-alias c='pygmentize -f terminal256 -O style=monokai -g'
 alias pcat='pygmentize -f terminal256 -O style=monokai -g'
 
 # Common shell functions
@@ -31,8 +30,6 @@ alias chmox='chmod +x'
 
 # Editors
 alias v='vim'
-alias a='atom'
-alias ws='open -a /Applications/WebStorm.app/ .'
 
 # Node
 alias ns='npm start'

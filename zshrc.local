@@ -11,16 +11,17 @@ antigen use oh-my-zsh
 antigen bundle osx
 antigen bundle brew
 antigen bundle brew-cask
-antigen bundle git
+antigen bundle git # support for git
 antigen bundle rupa/z
-antigen bundle command-not-found
+antigen bundle command-not-found # suggests package name with relevant command
+antigen bundle docker # docker autocomplete plugin
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
 
 # Node Plugins
 #
 antigen bundle node
-antigen bundle npm
+antigen bundle npm # support for NodeJS package manager
 
 # Load the theme.
 #
