@@ -14,7 +14,7 @@ antigen bundle brew-cask
 antigen bundle git # support for git
 antigen bundle rupa/z
 antigen bundle command-not-found # suggests package name with relevant command
-antigen bundle docker # docker autocomplete plugin
+antigen bundle docker            # docker autocomplete plugin
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
 
@@ -35,3 +35,11 @@ antigen apply
 # Customise zsh styles
 #
 # ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=7'
+
+# Add Flutter
+#
+export PATH="$PATH:/Users/vadym.kalinin/Projects/flutter/bin"
+
+# Add global node modules
+#
+export NODE_PATH=$(npm root --quiet -g)
