@@ -1,12 +1,16 @@
 <h2 style="color: #FEC163;">🔥 @vadikace dotfiles</h2>
 
-These dotfiles are an addition to the essential set from [thoughtbot](https://github.com/thoughtbot/dotfiles). Here I'm storing extensions and adjustments to already provided configs and tools in thoughtbot's repo.
+## TODO
+[ ] Migrate Ruby scripts
+[ ] Move thoughtbot's dotfiles here
+
+## What's in the box?
+- [Zsh](https://www.zsh.org/)
+- [Zinit](https://zdharma.github.io/zinit/wiki/)
+- [p10k zsh theme](https://github.com/romkatv/powerlevel10k)
 
 ## Installation
-```
-git clone git@github.com:vadikace/dotfiles.git ~/dotfiles-local
-rake install
-```
+
 
 This will do some pre-configuration first and then follow the steps from thoughbot [installation guide](https://github.com/thoughtbot/dotfiles#install) to properly symlink dotfiles. Default folders are `~/dotfiles` (where thoughtbot repo should be cloned) and `~/dotfiles-local` where you put your customisations. In the guide you may find further information in case you'd like to change this behaviour.
 
