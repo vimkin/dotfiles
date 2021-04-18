@@ -22,9 +22,6 @@ alias hosts='sudo vim /etc/hosts'
 # ls
 alias ls='gls -AFh --color --group-directories-first'
 
-# cat
-alias pcat='pygmentize -f terminal256 -O style=monokai -g'
-
 # Common shell functions
 alias psg='ps aux | grep '
 alias tf='tail -f'
