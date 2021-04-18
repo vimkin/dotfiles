@@ -1,3 +1,13 @@
+# Unix
+alias ll="ls -al"
+alias ln="ln -v"
+alias mkdir="mkdir -p"
+alias e="$EDITOR"
+alias v="$VISUAL"
+
+# Pretty print the path
+alias path='echo $PATH | tr -s ":" "\n"'
+
 # Quick edits
 alias ea='vim ~/.aliases.local'
 alias ez='vim ~/.zshrc.local'
@@ -8,11 +18,6 @@ alias et='vim ~/.tmux.conf'
 
 # Hosts
 alias hosts='sudo vim /etc/hosts'
-
-# mv, rm, cp
-alias mv='command gmv --interactive'
-alias rm='command grm --interactive'
-alias cp='command gcp --interactive'
 
 # ls
 alias ls='gls -AFh --color --group-directories-first'
@@ -39,5 +44,5 @@ alias ni='npm install'
 alias ys='yarn start'
 alias yi='yarn install'
 
-# Lock the screen (when going AFK)
+# Lock the screen
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
