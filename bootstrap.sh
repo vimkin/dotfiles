@@ -16,6 +16,8 @@ fi
 function init() {
   rsync --include ".zsh*" \
     --include ".zsh/**" \
+    --include ".p10k.zsh" \
+    --include ".aliases" \
     --exclude "*" \
     -avh --no-perms . ~
   source ~/.zshrc
