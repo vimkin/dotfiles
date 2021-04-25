@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/bin/zsh
 
 curDir=$(dirname ${(%):-%x})
 cd ${curDir}
