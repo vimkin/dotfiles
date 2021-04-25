@@ -1,7 +1,8 @@
 <h2 style="color: #FEC163;">🔥 @vimkin dotfiles</h2>
 
 ## TODO
-[ ] Consider switch to [asdf](https://asdf-vm.com/)
+- [ ] Try [Alacritty](https://github.com/alacritty/alacritty)
+- [ ] Consider switch to [asdf](https://asdf-vm.com/)
 
 ## What's in the box?
 - [Zsh](https://www.zsh.org/)
@@ -13,25 +14,33 @@
 
 ## Installation
 
-First consider installing Homebrew and it's packages with running:
+First install Homebrew and its packages with running in dotfiles repo:
 ```
 brew
 ```
 this will install all recommended cli utils and casks (unless excluded).
 
-If you want to exclude GUI programs (casks), find and remove/comment the following line in [brew.sh](brew.sh) file:
+To exclude GUI programs (casks), find and remove/comment the following line in [brew.sh](brew.sh) file:
 ```diff
 - install_casks
 ```
 
-To setup actual dotfiles, execute bootstrap script with zsh:
+To setup actual dotfiles, execute bootstrap script with zsh (already installed by brew):
 ```
 zsh bootstrap
 ```
-`--force` option can be added to exclude yes/no prompt message.
+`--force` or `-f` option can be added to avoid confirmation prompt.
 
 After successful completion all the files are copied to the $HOME folder.
 
-In case of editing dotfiles rerun bootstrap command to apply the changes.
+To update changed dotfiles rerun bootstrap command to apply the changes.
 
 **Caveat**: deletions are not automatically synced with $HOME. Unwanted files should be deleted from both locations individually.
+
+## Source of inspiration
+* [thoughtbot/dotfiles](https://github.com/thoughtbot/dotfiles)
+* [mathiasbynens/dotfiles](https://github.com/mathiasbynens/dotfiles)
+* [dotfiles.github.io](https://dotfiles.github.io/)
+
+## Further reading
+* [Lightning Fast ZSH Performance](https://joshghent.com/zsh-speed/)
