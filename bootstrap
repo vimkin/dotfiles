@@ -26,6 +26,8 @@ function init() {
     --include ".vim*" \
     --include ".vim/**" \
     --include ".tmux*" \
+    --include ".bin/" \
+    --include ".bin/**" \
     --exclude "*" \
     -avh --no-perms . ~
   source ~/.zshrc
