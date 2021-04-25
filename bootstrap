@@ -23,6 +23,8 @@ function init() {
     --include ".gitmessage.txt" \
     --include ".git_template/" \
     --include ".git_template/**" \
+    --include ".vim*" \
+    --include ".vim/**" \
     --exclude "*" \
     -avh --no-perms . ~
   source ~/.zshrc
