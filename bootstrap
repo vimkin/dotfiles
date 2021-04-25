@@ -25,6 +25,7 @@ function init() {
     --include ".git_template/**" \
     --include ".vim*" \
     --include ".vim/**" \
+    --include ".tmux*" \
     --exclude "*" \
     -avh --no-perms . ~
   source ~/.zshrc
