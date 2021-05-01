@@ -10,16 +10,18 @@ brew update
 function install_casks() {
   brew tap homebrew/cask
 
-  brew install iterm2
-  brew install visual-studio-code
-  brew install spotify
-  brew install 1password
-  brew install google-chrome
-  brew install inkscape
+  brew install --cask iterm2
+  brew install --cask visual-studio-code
+  brew install --cask spotify
+  brew install --cask 1password
+  brew install --cask google-chrome
+  brew install --cask inkscape
 
-  # Install FiraCode
+  # Install Fonts
   brew tap homebrew/cask-fonts
-  brew install font-fira-code
+
+  brew install --cask font-fira-code
+  brew install --cask font-jetbrains-mono
 }
 
 function install_gnu_utils() {
@@ -28,7 +30,7 @@ function install_gnu_utils() {
   # Replaces standard Mac OS X utilities with GNU core utilities List of all commands can be found
   # here: https://en.wikipedia.org/wiki/List_of_GNU_Core_Utilities_commands Initially available with
   # 'g' prefix (grm, gmv etc.)
-  # brew install coreutils
+  brew install coreutils
 
   # Extending directory search and file locating capabilities https://www.gnu.org/software/findutils/
   # brew install findutils
@@ -36,11 +38,12 @@ function install_gnu_utils() {
 
 function install_formulas() {
   brew install git
+  brew install svn # svn isn't shipped with XCode by default anymore
   brew install python3
   brew install bat # colorful cat
   brew install n
   brew install docker-compose
-  brwe install neovim
+  brew install neovim
 
   # Improves git diff https://github.com/so-fancy/diff-so-fancy gitconfig should be additionally
   # configured to apply it for every diff
