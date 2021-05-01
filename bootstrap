@@ -32,9 +32,13 @@ function init() {
     --exclude "*" \
     -avh --no-perms . ~
   source ~/.zshrc
+
+  if [ $SHELL != '/bin/zsh' ]; then
+    chsh -s $(which zsh) # make zsh your default shell
+  fi
 }
 
-if [[ "$1" == "--force" ]] || [[ "$1" == "-f" ]]; then
+if [[ $1 == "--force" ]] || [[ $1 == "-f" ]]; then
   init
 else
   # -q for yes/no answers
