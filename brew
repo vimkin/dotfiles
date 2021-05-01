@@ -8,18 +8,18 @@ fi
 brew update
 
 function install_casks() {
-  brew tap caskroom/cask
+  brew tap homebrew/cask
 
-  brew cask install iterm2
-  brew cask install visual-studio-code
-  brew cask install spotify
-  brew cask install 1password
-  brew cask install google-chrome
-  brew cask install inkscape
+  brew install iterm2
+  brew install visual-studio-code
+  brew install spotify
+  brew install 1password
+  brew install google-chrome
+  brew install inkscape
 
   # Install FiraCode
   brew tap homebrew/cask-fonts
-  brew cask install font-fira-code
+  brew install font-fira-code
 }
 
 function install_gnu_utils() {
