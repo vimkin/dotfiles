@@ -28,6 +28,7 @@ function init() {
     --include ".tmux*" \
     --include ".bin/" \
     --include ".bin/**" \
+    --include ".alacritty.yml" \
     --exclude "*" \
     -avh --no-perms . ~
   source ~/.zshrc
