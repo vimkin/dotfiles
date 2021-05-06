@@ -1,5 +1,6 @@
 # Make directory and change into it.
+#
+# ℹ️ This function cannot be moved to a standalone script because it needs to have current directory
+# in the scope.
 
-function mcd() {
-  mkdir -p "$1" && cd "$1";
-}
+mkdir -p $1 && cd $1

@@ -1,10 +1,11 @@
 # Load .env file into shell session for environment variables
+#
+# ℹ️ This function cannot be moved to a standalone script because it needs to have current directory
+# in the scope.
 
-function envup() {
-  if [ -f .env ]; then
-    export $(sed '/^ *#/ d' .env)
-  else
-    echo 'No .env file found' 1>&2
-    return 1
-  fi
-}
+if [ -f .env ]; then
+  export $(sed '/^ *#/ d' .env)
+else
+  echo 'No .env file found' 1>&2
+  return 1
+fi

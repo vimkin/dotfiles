@@ -5,15 +5,22 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# add global node modules
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[ -f ~/.p10k.zsh ] && source ~/.p10k.zsh
+
+# Add global node modules
 export NODE_PATH=$(npm root --quiet -g)
 
-# load custom executable functions
-for function in ~/.zsh/functions/*; do
-  source $function
+# Load custom executable functions
+fpath=($HOME/.zsh/functions $fpath)
+
+for f in $HOME/.zsh/functions/*; do
+  # The `U` disables alias expansion while the function is being loaded and the `z` forces zsh-style
+  # autoloading even if KSH_AUTOLOAD is set for whatever reason.
+  autoload -Uz $(basename $f)
 done
 
-# extra files in ~/.zsh/configs/pre , ~/.zsh/configs , and ~/.zsh/configs/post these are loaded
+# Extra files in ~/.zsh/configs/pre , ~/.zsh/configs , and ~/.zsh/configs/post these are loaded
 # first, second, and third, respectively.
 function load_settings() {
   _dir="$1"
@@ -45,7 +52,7 @@ function load_settings() {
 }
 
 function bundle_plugins() {
-  source "$HOME/.zinit/bin/zinit.zsh"
+  source $HOME/.zinit/bin/zinit.zsh
 
   autoload -Uz _zinit
   (( ${+_comps} )) && _comps[zinit]=_zinit
@@ -85,10 +92,7 @@ load_settings "$HOME/.zsh/configs"
 bundle_plugins
 
 # aliases
-[[ -f ~/.aliases ]] && source ~/.aliases
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+[ -f ~/.aliases ] && source ~/.aliases
 
 # Enable fuzzy autocompletions and keybindings
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
