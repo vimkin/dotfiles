@@ -5,6 +5,9 @@ alias mkdir="mkdir -p"
 alias e="$EDITOR"
 alias v="$VISUAL"
 
+# Remap vim to neovim
+alias vim=nvim
+
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
 

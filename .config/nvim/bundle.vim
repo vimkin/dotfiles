@@ -2,17 +2,22 @@ if &compatible
   set nocompatible
 end
 
+" auto-install vim-plug
+if empty(glob('~/.config/nvim/autoload/plug.vim'))
+  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall
+endif
+
 " Remove declared plugins
 function! s:UnPlug(plug_name)
   if has_key(g:plugs, a:plug_name)
     call remove(g:plugs, a:plug_name)
   endif
 endfunction
-command!  -nargs=1 UnPlug call s:UnPlug(<args>)
 
-let g:has_async = v:version >= 800 || has('nvim')
+command! -nargs=1 UnPlug call s:UnPlug(<args>)
 
-call plug#begin('~/.vim/bundle')
+call plug#begin('~/.config/nvim/plugged')
 
 " Define bundles via Github repos
 Plug 'christoomey/vim-run-interactive'
@@ -39,9 +44,6 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
 Plug 'vim-scripts/tComment'
-
-if g:has_async
-  Plug 'dense-analysis/ale'
-endif
+Plug 'dense-analysis/ale'
 
 call plug#end()

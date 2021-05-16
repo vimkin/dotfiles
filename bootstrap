@@ -29,6 +29,8 @@ function init() {
     --include ".bin/" \
     --include ".bin/**" \
     --include ".alacritty.yml" \
+    --include ".config*" \
+    --include ".config/**" \
     --exclude "*" \
     -avh --no-perms . ~
   source ~/.zshrc

@@ -22,8 +22,8 @@ if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
   syntax on
 endif
 
-if filereadable(expand("~/.vimrc.bundles.vim"))
-  source ~/.vimrc.bundles.vim
+if filereadable(expand("~/.config/nvim/bundle.vim"))
+  source ~/.config/nvim/bundle.vim
 endif
 
 " Load matchit.vim, but only if the user hasn't installed a newer version.
@@ -56,18 +56,13 @@ augroup END
 " ALE linting events
 augroup ale
   autocmd!
-
-  if g:has_async
-    autocmd VimEnter *
-      \ set updatetime=1000 |
-      \ let g:ale_lint_on_text_changed = 0
-    autocmd CursorHold * call ale#Queue(0)
-    autocmd CursorHoldI * call ale#Queue(0)
-    autocmd InsertEnter * call ale#Queue(0)
-    autocmd InsertLeave * call ale#Queue(0)
-  else
-    echoerr "The thoughtbot dotfiles require NeoVim or Vim 8"
-  endif
+  autocmd VimEnter *
+    \ set updatetime=1000 |
+    \ let g:ale_lint_on_text_changed = 0
+  autocmd CursorHold * call ale#Queue(0)
+  autocmd CursorHoldI * call ale#Queue(0)
+  autocmd InsertEnter * call ale#Queue(0)
+  autocmd InsertLeave * call ale#Queue(0)
 augroup END
 
 " When the type of shell script is /bin/sh, assume a POSIX-compatible

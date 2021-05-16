@@ -1,18 +1,20 @@
 <h2 style="color: #FEC163;">🔥 @vimkin dotfiles</h2>
 
 ## TODO
-- [ ] Try [Alacritty](https://github.com/alacritty/alacritty)
 - [ ] Consider switch to [asdf](https://asdf-vm.com/)
 
 ## What's in the box?
+- Homebrew: Install formulas and casks
+- [Alacritty](https://github.com/alacritty/alacritty)
 - [Zsh](https://www.zsh.org/)
 - [Zinit](https://zdharma.github.io/zinit/wiki/)
 - [p10k zsh theme](https://github.com/romkatv/powerlevel10k)
-- Homebrew: install formulas and casks
+- NeoVim
 - tmux
-- Vim
 
 ## Installation
+
+### Preparation: Homebrew
 
 First install Homebrew and its packages with running in dotfiles repo:
 ```
@@ -25,13 +27,15 @@ To exclude GUI programs (casks), find and remove/comment the following line in [
 - install_casks
 ```
 
-To setup actual dotfiles, execute bootstrap script with zsh (already installed by brew):
+### Install dotfiles
+
+To setup actual dotfiles, execute bootstrap script with zsh (preinstalled by brew):
 ```
 zsh bootstrap
 ```
-`--force` or `-f` option can be added to avoid confirmation prompt.
+`--force` or `-f` option can be added to avoid the confirmation prompt.
 
-After successful completion all the files are copied to the $HOME folder.
+After successful completion all the files are copied to your $HOME folder.
 
 To update changed dotfiles rerun bootstrap command to apply the changes.
 
