@@ -11,6 +11,7 @@
 - [p10k zsh theme](https://github.com/romkatv/powerlevel10k)
 - NeoVim
 - tmux
+- [MacOS Shortcuts](docs/MACOS_SHORTCUTS.md)
 
 ## Installation
 
