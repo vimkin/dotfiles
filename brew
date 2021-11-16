@@ -74,6 +74,9 @@ function install_formulas() {
     brew install --cask "$i"
   done
 
+  # Use to convert & minimize video quality like: ffmpeg -i input.mov -vcodec libx265 -crf 28 output.mp4
+  brew install ffmpeg
+
   # Improves git diff https://github.com/so-fancy/diff-so-fancy gitconfig should be additionally
   # configured to apply it for every diff.
   brew install diff-so-fancy
