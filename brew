@@ -9,21 +9,41 @@ brew update
 
 function install_casks() {
   brew tap homebrew/cask
-
-  brew install --cask iterm2
-  brew install --cask visual-studio-code
-  brew install --cask insomnia
-  brew install --cask docker
-  brew install --cask spotify
-  brew install --cask 1password
-  brew install --cask google-chrome
-  brew install --cask inkscape
-
-  # Install Fonts
   brew tap homebrew/cask-fonts
 
-  brew install --cask font-fira-code
-  brew install --cask font-jetbrains-mono
+  devTools=(
+    'alacritty'
+    'visual-studio-code'
+    'insomnia'
+    'docker'
+    'spotify'
+  )
+  utilities=(
+    '1password'
+    'google-chrome'
+    'brave-browser'
+    'inkscape'
+    'vlc'
+    'notion'
+  )
+  social=(
+    'telegram'
+    'tweetbot'
+  )
+  fonts=(
+    'font-fira-code'
+    'font-jetbrains-mono'
+  )
+  all=(
+    "${devTools[@]}"
+    "${utilities[@]}"
+    "${social[@]}"
+    "${fonts[@]}"
+  )
+
+  for i in "${all[@]}"; do
+    brew install --cask "$i"
+  done
 }
 
 function install_gnu_utils() {
@@ -35,29 +55,34 @@ function install_gnu_utils() {
   brew install coreutils
 
   # Extending directory search and file locating capabilities https://www.gnu.org/software/findutils/
-  # brew install findutils
+  brew install findutils
 }
 
 function install_formulas() {
-  brew install git
-  brew install svn # svn isn't shipped with XCode by default anymore
-  brew install python3
-  brew install bat # colorful cat
-  brew install n
-  brew install docker-compose
-  brew install neovim
-  brew install tmux
+  devUtils=(
+    'git'
+    'svn' # svn isn't shipped with XCode by default anymore
+    'python3'
+    'bat' # colorful cat
+    'n'   # minimalistic node version-manager
+    'docker-compose'
+    'neovim'
+    'tmux'
+  )
+
+  for i in "${devUtils[@]}"; do
+    brew install --cask "$i"
+  done
 
   # Improves git diff https://github.com/so-fancy/diff-so-fancy gitconfig should be additionally
-  # configured to apply it for every diff
+  # configured to apply it for every diff.
   brew install diff-so-fancy
 
   # Installing yarn without global node dependency
   # https://gist.github.com/AGutierrezR/2c22fdd8686e6e30c56949f5e37e214e
   brew install yarn --ignore-dependencies
 
-  # fzf is a general-purpose command-line fuzzy finder. Don't forget to execute `$(brew
-  # --prefix)/opt/fzf/install` command after installation
+  # fzf is a general-purpose command-line fuzzy finder.
   brew install fzf
   $(brew --prefix)/opt/fzf/install
 }
