@@ -8,6 +8,9 @@ alias v="$VISUAL"
 # Remap vim to neovim
 alias vim=nvim
 
+# Editors
+alias v=nvim
+
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
 
@@ -32,9 +35,6 @@ alias cl='clear'
 
 # File systems
 alias chmox='chmod +x'
-
-# Editors
-alias v='vim'
 
 # Node
 alias ns='npm start'
