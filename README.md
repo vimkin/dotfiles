@@ -2,6 +2,7 @@
 
 ## TODO
 - [ ] Consider switch to [asdf](https://asdf-vm.com/)
+- [ ] Update external plugins and theme function
 
 ## What's in the box?
 - Homebrew: Install formulas and casks
