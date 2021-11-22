@@ -7,7 +7,7 @@
 - Homebrew: Install formulas and casks
 - [Alacritty](https://github.com/alacritty/alacritty)
 - [Zsh](https://www.zsh.org/)
-- [Zinit](https://zdharma.github.io/zinit/wiki/)
+- [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh)
 - [p10k zsh theme](https://github.com/romkatv/powerlevel10k)
 - NeoVim
 - tmux

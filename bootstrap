@@ -1,17 +1,44 @@
 #!/bin/zsh
 
 curDir=$(dirname ${(%):-%x})
-cd ${curDir}
+cd $curDir
 
 git pull origin master
 
-if [ ! -f $HOME/.zinit/bin/zinit.zsh ]; then
-  print -P "Installing zdharma/zinit..."
-  command mkdir -p "$HOME/.zinit" && command chmod g-rwX "$HOME/.zinit"
-  command git clone https://github.com/zdharma/zinit "$HOME/.zinit/bin" && \
-    print -P "Installation successful." || \
-    print -P "The clone has failed."
+if [ ! -f $HOME/.oh-my-zsh/oh-my-zsh.sh ]; then
+  echo "Installing Oh My Zsh..."
+
+  command sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" && \
+    echo "Installation successful." || \
+    echo "The clone has failed."
 fi
+
+if [ ! -d $ZSH_CUSTOM/themes/powerlevel10k ]; then
+  echo "Installing p10k theme..."
+
+  local themeDir=$ZSH_CUSTOM/themes/powerlevel10k
+
+  command git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $themeDir && \
+    echo "Installation successful." || \
+    echo "The clone has failed."
+fi
+
+// TODO: solve Read-only file system on macos
+function clone_external_plugins() {
+  echo "Cloning external plugins..."
+
+  local customPluginthemeDir=$ZSH_CUSTOM/plugins
+  local externalPlugins=(
+    zsh-users/zsh-autosuggestions
+    zsh-users/zsh-syntax-highlighting
+  )
+
+  for repo in $externalPlugins; do
+    if [ ! -d $customPluginthemeDir/${repo:t} ]; then
+      git clone https://github.com/${repo} $customPluginthemeDir/${repo:t}
+    fi
+  done
+}
 
 function init() {
   rsync --include ".zsh*" \
@@ -39,6 +66,8 @@ function init() {
     chsh -s $(which zsh) # make zsh your default shell
   fi
 }
+
+clone_external_plugins
 
 if [[ $1 == "--force" ]] || [[ $1 == "-f" ]]; then
   init
