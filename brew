@@ -61,6 +61,7 @@ function install_gnu_utils() {
 function install_formulas() {
   devUtils=(
     'git'
+    'gh'  #github cli
     'svn' # svn isn't shipped with XCode by default anymore
     'python3'
     'bat' # colorful cat
@@ -71,7 +72,7 @@ function install_formulas() {
   )
 
   for i in "${devUtils[@]}"; do
-    brew install --cask "$i"
+    brew install "$i"
   done
 
   # Use to convert & minimize video quality like: ffmpeg -i input.mov -vcodec libx265 -crf 28 output.mp4
