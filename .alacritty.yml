@@ -699,16 +699,20 @@ font:
 #
 # If the same trigger is assigned to multiple actions, all of them are executed
 # in the order they were defined in.
-#key_bindings:
-#- { key: Paste,                                       action: Paste          }
-#- { key: Copy,                                        action: Copy           }
-#- { key: L,         mods: Control,                    action: ClearLogNotice }
-#- { key: L,         mods: Control, mode: ~Vi|~Search, chars: "\x0c"          }
-#- { key: PageUp,    mods: Shift,   mode: ~Alt,        action: ScrollPageUp,  }
-#- { key: PageDown,  mods: Shift,   mode: ~Alt,        action: ScrollPageDown }
-#- { key: Home,      mods: Shift,   mode: ~Alt,        action: ScrollToTop,   }
-#- { key: End,       mods: Shift,   mode: ~Alt,        action: ScrollToBottom }
-
+key_bindings:
+  #- { key: Paste,                                       action: Paste          }
+  #- { key: Copy,                                        action: Copy           }
+  #- { key: L,         mods: Control,                    action: ClearLogNotice }
+  #- { key: L,         mods: Control, mode: ~Vi|~Search, chars: "\x0c"          }
+  #- { key: PageUp,    mods: Shift,   mode: ~Alt,        action: ScrollPageUp,  }
+  #- { key: PageDown,  mods: Shift,   mode: ~Alt,        action: ScrollPageDown }
+  #- { key: Home,      mods: Shift,   mode: ~Alt,        action: ScrollToTop,   }
+  #- { key: End,       mods: Shift,   mode: ~Alt,        action: ScrollToBottom }
+  # - { key: Right, mode: Alt, chars: WordRight }
+  # - { key: Left, mode: Alt, action: WordLeft }
+  - { key: Back, mods: Command, chars: "\x15" }
+  - { key: Left, mods: Alt, chars: "\x1BB" }
+  - { key: Right, mods: Alt, chars: "\x1BF" }
 # Vi Mode
 #- { key: Space,  mods: Shift|Control, mode: ~Search,    action: ToggleViMode            }
 #- { key: Space,  mods: Shift|Control, mode: Vi|~Search, action: ScrollToBottom          }
