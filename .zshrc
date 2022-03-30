@@ -53,8 +53,6 @@ function load_settings() {
 }
 
 function bundle_plugins() {
-  echo "Bundling plugins..."
-
   plugins=(
     git
     macos
