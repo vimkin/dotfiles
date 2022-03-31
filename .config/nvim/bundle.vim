@@ -45,5 +45,6 @@ Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
 Plug 'vim-scripts/tComment'
 Plug 'dense-analysis/ale'
+Plug 'rust-lang/rust.vim'
 
 call plug#end()
