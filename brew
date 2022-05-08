@@ -65,22 +65,28 @@ function install_formulas() {
     'svn' # svn isn't shipped with XCode by default anymore
     'python3'
     'bat' # colorful cat
-    'n'   # minimalistic node version-manager
     'docker-compose'
     'neovim'
-    'tmux'
+    'tmux',
+    'asdf' # runtime version manager
   )
 
   for i in "${devUtils[@]}"; do
     brew install "$i"
   done
 
-  # Use to convert & minimize video quality like: ffmpeg -i input.mov -vcodec libx265 -crf 28 output.mp4
-  brew install ffmpeg
+  utils=(
+    'p7zip' # 7zip archiver
+    # Use to convert & minimize video quality like: ffmpeg -i input.mov -vcodec libx265 -crf 28 output.mp4
+    'ffmpeg'
+    # Improves git diff https://github.com/so-fancy/diff-so-fancy gitconfig should be additionally
+    # configured to apply it for every diff.
+    'diff-so-fancy'
+  )
 
-  # Improves git diff https://github.com/so-fancy/diff-so-fancy gitconfig should be additionally
-  # configured to apply it for every diff.
-  brew install diff-so-fancy
+  for i in "${utils[@]}"; do
+    brew install "$i"
+  done
 
   # Installing yarn without global node dependency
   # https://gist.github.com/AGutierrezR/2c22fdd8686e6e30c56949f5e37e214e
