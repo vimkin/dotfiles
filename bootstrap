@@ -6,21 +6,11 @@ cd $curDir
 git pull origin master
 
 if [ ! -f $HOME/.oh-my-zsh/oh-my-zsh.sh ]; then
-  echo "Installing Oh My Zsh..."
-
-  command sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" && \
-    echo "Installation successful." || \
-    echo "The clone has failed."
+  echo "Oh no! Oh My Zsh is not installed! Please visit https://ohmyz.sh/ for installation instructions."
 fi
 
 if [ ! -d $ZSH_CUSTOM/themes/powerlevel10k ]; then
-  echo "Installing p10k theme..."
-
-  local themeDir=$ZSH_CUSTOM/themes/powerlevel10k
-
-  command git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $themeDir && \
-    echo "Installation successful." || \
-    echo "The clone has failed."
+  echo "Snap! Powerlevel10k is not installed! Please follow https://github.com/romkatv/powerlevel10k#oh-my-zsh for installation instructions."
 fi
 
 // TODO: solve Read-only file system on macos
