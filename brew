@@ -1,8 +1,7 @@
 #!/bin/sh
 
 if [[ ! -f $(which brew) ]]; then
-  echo "Homebrew not installed. Installing brew..."
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  echo "Oh no! Dotfiles requires Homebrew to be installed. Please visit https://brew.sh/ for installation instructions."
 fi
 
 brew update
@@ -12,7 +11,7 @@ function install_casks() {
   brew tap homebrew/cask-fonts
 
   devTools=(
-    'alacritty'
+    'iterm2'
     'visual-studio-code'
     'insomnia'
     'docker'
@@ -41,9 +40,7 @@ function install_casks() {
     "${fonts[@]}"
   )
 
-  for i in "${all[@]}"; do
-    brew install --cask "$i"
-  done
+  brew install --cask $all
 }
 
 function install_gnu_utils() {
@@ -70,11 +67,6 @@ function install_formulas() {
     'tmux',
     'asdf' # runtime version manager
   )
-
-  for i in "${devUtils[@]}"; do
-    brew install "$i"
-  done
-
   utils=(
     'p7zip' # 7zip archiver
     # Use to convert & minimize video quality like: ffmpeg -i input.mov -vcodec libx265 -crf 28 output.mp4
@@ -84,9 +76,8 @@ function install_formulas() {
     'diff-so-fancy'
   )
 
-  for i in "${utils[@]}"; do
-    brew install "$i"
-  done
+  brew install $devUtils
+  brew install $utils
 
   # Installing yarn without global node dependency
   # https://gist.github.com/AGutierrezR/2c22fdd8686e6e30c56949f5e37e214e
