@@ -13,17 +13,21 @@ function install_casks() {
   devTools=(
     'iterm2'
     'visual-studio-code'
+    'fleet' # JetBrains code-editor
     'insomnia'
     'docker'
     'spotify'
+    'github' # receive native notifications from github, not emails
   )
   utilities=(
     '1password'
     'google-chrome'
     'brave-browser'
-    'inkscape'
+    'inkscape' # vector graphics editor
     'vlc'
     'notion'
+    'tunnelblick' # vpn client
+    'calibre'     # ebook management
   )
   social=(
     'telegram'
@@ -74,6 +78,8 @@ function install_formulas() {
     # Improves git diff https://github.com/so-fancy/diff-so-fancy gitconfig should be additionally
     # configured to apply it for every diff.
     'diff-so-fancy'
+    'ghostscript' # interpreter for the PostScript language and for PDF
+    'imagemagick' # image manipulation
   )
 
   brew install $devUtils
