@@ -14,4 +14,7 @@ fi
 # mkdir .git/safe in the root of repositories you trust
 PATH=".git/safe/../../bin:$PATH"
 
+# add Rust package manager to path
+PATH="$HOME/.cargo/bin:$PATH"
+
 export -U PATH

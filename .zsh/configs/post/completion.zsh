@@ -9,6 +9,5 @@ else
   compinit -C;
 fi;
 
-# disable zsh bundled function mtools command mcd
-# which causes a conflict.
+# disable zsh bundled function mtools command mcd which causes a conflict.
 compdef -d mcd
