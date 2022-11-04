@@ -46,3 +46,6 @@ alias yi='yarn install'
 
 # Lock the screen
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+
+# Apple
+alias icloud='cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/'
