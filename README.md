@@ -1,47 +1,44 @@
-<h2 style="color: #FEC163;">🔥 @vimkin dotfiles</h2>
-
-## TODO
-- [ ] Consider switch to [asdf](https://asdf-vm.com/)
-- [ ] Update external plugins and theme function
+![logo](docs/logo.png)
 
 ## What's in the box?
-- Homebrew: Install formulas and casks
-- [Alacritty](https://github.com/alacritty/alacritty)
+- Install packages and GUI apps with Homebrew
+- [iTerm2](https://github.com/gnachman/iTerm2)
 - [Zsh](https://www.zsh.org/)
 - [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh)
 - [p10k zsh theme](https://github.com/romkatv/powerlevel10k)
 - NeoVim
 - tmux
 - [MacOS Shortcuts](docs/MACOS_SHORTCUTS.md)
+- Colorful and shiny cli experience 🌈
 
 ## Installation
 
-### Preparation: Homebrew
+1. `cd $HOME && git clone https://github.com/vimkin/dotfiles.git && cd dotfiles`
+2. **Homebrew**
 
-First install Homebrew and its packages with running in dotfiles repo:
-```
-brew
-```
-this will install all recommended cli utils and casks (unless excluded).
+    First install necessary packages and GUI applications from Homebrew. Execute the brew script by running following command in dotfiles repo
+    *(\*the script might guide you in case of missing dependencies)*:
+    ```
+    brew
+    ```
+    To exclude GUI programs(casks) remove/comment the following line in [brew](brew) file:
+    ```diff
+    - install_casks
+    ```
 
-To exclude GUI programs (casks), find and remove/comment the following line in [brew.sh](brew.sh) file:
-```diff
-- install_casks
-```
+3. **Bootstrap dotfiles**
 
-### Install dotfiles
+    Execute the bootstrap script to install the dotfiles *(\*the script will guide you in case of missing dependencies)*:
+    ```
+    zsh bootstrap
+    ```
+    *\*`--force` or `-f` parameter can be added to avoid the confirmation prompt.*
 
-To setup actual dotfiles, execute bootstrap script with zsh (preinstalled by brew):
-```
-zsh bootstrap
-```
-`--force` or `-f` option can be added to avoid the confirmation prompt.
+    After the successful completion most of the dotfiles are symlinked to the `$HOME` folder, except few exceptions like `.bin` or `.config` folders.
 
-After successful completion all the files are copied to your $HOME folder.
+    Changes between originals and symlinked files are of course synced, so feel free to modify whether former or latter, makes no difference.
 
-To update changed dotfiles rerun bootstrap command to apply the changes.
-
-**Caveat**: deletions are not automatically synced with $HOME. Unwanted files should be deleted from both locations individually.
+    **Caveat**: deletions are not automatically synced with a root folder. Deleting originals leads to dangling symlinks. To clean up run the following command in your root `find -L . -maxdepth 1 -type l | xargs rm -rf`, which finds and removes the broken symlinks.
 
 ## Source of inspiration
 * [thoughtbot/dotfiles](https://github.com/thoughtbot/dotfiles)
