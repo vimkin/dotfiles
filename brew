@@ -1,7 +1,8 @@
 #!/bin/sh
 
 if [[ ! -f $(which brew) ]]; then
-  echo "Oh no! Dotfiles requires Homebrew to be installed. Please visit https://brew.sh/ for installation instructions."
+  echo "Oh no! Dotfiles requires Homebrew to be installed. Please visit https://brew.sh for installation instructions. Execute me again when brew is installed."
+  exit 1
 fi
 
 brew update

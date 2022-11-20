@@ -6,19 +6,20 @@ cd $curDir
 git pull origin master
 
 if [ ! -f $HOME/.oh-my-zsh/oh-my-zsh.sh ]; then
-  echo "Oh no! Oh My Zsh is not installed! Please visit https://ohmyz.sh/ for installation instructions."
+  echo "Oh no! Oh My Zsh is not installed! Please visit https://ohmyz.sh for installation instructions. Execute me again when Oh My Zsh is installed."
+  exit 1
 fi
 
 if [ ! -d $ZSH_CUSTOM/themes/powerlevel10k ]; then
-  echo "Snap! Powerlevel10k is not installed! Please follow https://github.com/romkatv/powerlevel10k#oh-my-zsh for installation instructions."
+  echo "Snap! Powerlevel10k is not installed! Please follow https://github.com/romkatv/powerlevel10k#oh-my-zsh for installation instructions. Execute me again when Powerlevel10k is installed."
+  exit 1
 fi
 
-// TODO: solve Read-only file system on macos
 function clone_external_plugins() {
   echo "Cloning external plugins..."
 
-  local customPluginthemeDir=$ZSH_CUSTOM/plugins
-  local externalPlugins=(
+  customPluginthemeDir=$ZSH_CUSTOM/plugins
+  externalPlugins=(
     zsh-users/zsh-autosuggestions
     zsh-users/zsh-syntax-highlighting
   )
@@ -31,24 +32,29 @@ function clone_external_plugins() {
 }
 
 function init() {
-  rsync --include ".zsh*" \
-    --include ".zsh/**" \
-    --include ".p10k.zsh" \
-    --include ".aliases" \
-    --include ".gitconfig" \
-    --include ".gitignore.txt" \
-    --include ".gitmessage.txt" \
-    --include ".git_template/" \
-    --include ".git_template/**" \
-    --include ".vim*" \
-    --include ".vim/**" \
-    --include ".tmux*" \
-    --include ".bin/" \
-    --include ".bin/**" \
-    --include ".config*" \
-    --include ".config/**" \
-    --exclude "*" \
-    -avh --no-perms . ~
+  includes=(
+    ".zsh"* # leave * outside the quotes to enable the wildcard
+    ".p10k.zsh"
+    ".aliases"
+    ".gitconfig"
+    ".git"*".txt"
+    ".tmux.conf"
+  )
+  # following folders are not symlinked because they might contain custom user's executables
+  exception_folders=(
+    ".bin"
+    ".config"
+  )
+
+  for include in $includes; do
+    ln -v -sf $PWD/$include $HOME
+  done
+
+  for exception in $exception_folders; do
+    mkdir -v -p $HOME/$exception
+    ln -v -sf $PWD/$exception/** $HOME/$exception
+  done
+
   source ~/.zshrc
 
   if [ $SHELL != '/bin/zsh' ]; then
@@ -74,5 +80,3 @@ else
     init
   fi
 fi
-
-unset init
