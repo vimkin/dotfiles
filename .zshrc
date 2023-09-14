@@ -67,7 +67,7 @@ function bundle_plugins() {
 
   source $ZSH/oh-my-zsh.sh
 
-  # enable option-stacking for docker e.g. docket run -it ubuntu be aware of following quirk
+  # enable option-stacking for docker e.g. docker run -it ubuntu be aware of following quirk
   # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/docker#settings
   zstyle ':completion:*:*:docker:*' option-stacking yes
   zstyle ':completion:*:*:docker-*:*' option-stacking yes
