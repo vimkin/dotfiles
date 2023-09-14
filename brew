@@ -15,24 +15,29 @@ function install_casks() {
     'iterm2'
     'visual-studio-code'
     'fleet' # JetBrains code-editor
-    'insomnia'
+    'insomnia' # API development
+    'postman' # API development
     'docker'
     'spotify'
-    'github' # receive native notifications from github, not emails
+    'github' # get native notifications from github, not emails
   )
   utilities=(
     '1password'
     'google-chrome'
     'brave-browser'
+    'firefox'
     'inkscape' # vector graphics editor
     'vlc'
-    'notion'
+    'notion' # note taking
+    'obsidian' # note taking
     'tunnelblick' # vpn client
-    'calibre'     # ebook management
+    'calibre' # ebook management
+    'nordvpn'
+    'raindropio' # bookmark manager
+    'logi-options-plus' # logitech mouse configuration
   )
   social=(
     'telegram'
-    'tweetbot'
   )
   fonts=(
     'font-fira-code'
