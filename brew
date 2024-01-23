@@ -14,12 +14,12 @@ function install_casks() {
   devTools=(
     'iterm2'
     'visual-studio-code'
-    'fleet' # JetBrains code-editor
     'insomnia' # API development
     'postman' # API development
     'docker'
     'spotify'
     'github' # get native notifications from github, not emails
+    'wireshark' # network protocol analyzer
   )
   utilities=(
     '1password'
@@ -32,7 +32,7 @@ function install_casks() {
     'obsidian' # note taking
     'tunnelblick' # vpn client
     'calibre' # ebook management
-    'nordvpn'
+    # 'nordvpn'
     'raindropio' # bookmark manager
     'logi-options-plus' # logitech mouse configuration
   )
@@ -74,7 +74,7 @@ function install_formulas() {
     'bat' # colorful cat
     'docker-compose'
     'neovim'
-    'tmux',
+    'tmux'
     'asdf' # runtime version manager
   )
   utils=(
