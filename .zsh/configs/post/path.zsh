@@ -1,4 +1,4 @@
-# ensure dotfiles bin directory is loaded first
+# Ensure dotfiles bin directory is loaded first
 PATH="$HOME/.bin:/usr/local/sbin:$PATH"
 
 # Try loading ASDF from the regular home dir location
@@ -14,7 +14,10 @@ fi
 # mkdir .git/safe in the root of repositories you trust
 PATH=".git/safe/../../bin:$PATH"
 
-# add Rust package manager to path
+# Add Rust package manager to path
 PATH="$HOME/.cargo/bin:$PATH"
+
+# Add global node modules
+export NODE_PATH=$(npm root --quiet -g)
 
 export -U PATH
