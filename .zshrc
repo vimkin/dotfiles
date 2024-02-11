@@ -10,9 +10,6 @@ export ZSH_CUSTOM="$ZSH/custom"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
-# Add global node modules
-export NODE_PATH=$(npm root --quiet -g)
-
 # Load custom executable functions
 fpath=($HOME/.zsh/functions $fpath)
 
@@ -60,7 +57,7 @@ function bundle_plugins() {
     asdf # runtime version manager
     z
     command-not-found # suggests package name with requested command if that doesn't exist
-    docker
+    # docker
     zsh-autosuggestions # external
     zsh-syntax-highlighting # external
   )
@@ -69,8 +66,8 @@ function bundle_plugins() {
 
   # enable option-stacking for docker e.g. docker run -it ubuntu be aware of following quirk
   # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/docker#settings
-  zstyle ':completion:*:*:docker:*' option-stacking yes
-  zstyle ':completion:*:*:docker-*:*' option-stacking yes
+  # zstyle ':completion:*:*:docker:*' option-stacking yes
+  # zstyle ':completion:*:*:docker-*:*' option-stacking yes
 }
 
 load_settings "$HOME/.zsh/configs"
