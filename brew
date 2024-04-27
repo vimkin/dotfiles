@@ -66,6 +66,9 @@ function install_gnu_utils() {
 }
 
 function install_formulas() {
+  # This line is required to enable oh-my-zsh command-not-found plugin
+  brew tap homebrew/command-not-found
+
   devUtils=(
     'git'
     'gh'  #github cli
