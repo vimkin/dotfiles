@@ -19,7 +19,7 @@ function install_casks() {
     'docker'
     'spotify'
     'github' # get native notifications from github, not emails
-    'wireshark' # network protocol analyzer
+    # 'wireshark' # network protocol analyzer
   )
   utilities=(
     '1password'
@@ -93,7 +93,7 @@ function install_formulas() {
 
   # Installing yarn without global node dependency
   # https://gist.github.com/AGutierrezR/2c22fdd8686e6e30c56949f5e37e214e
-  brew install yarn --ignore-dependencies
+  # brew install yarn --ignore-dependencies
 
   # fzf is a general-purpose command-line fuzzy finder.
   brew install fzf
