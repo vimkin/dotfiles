@@ -78,6 +78,7 @@ function install_formulas() {
     # Improves git diff https://github.com/so-fancy/diff-so-fancy gitconfig should be additionally
     # configured to apply it for every diff.
     'diff-so-fancy'
+    'zoxide' # faster way to navigate filesystem
   )
   utils=(
     'p7zip' # 7zip archiver
