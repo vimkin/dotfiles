@@ -75,14 +75,14 @@ function install_formulas() {
     'docker-compose'
     'neovim'
     'tmux'
+    # Improves git diff https://github.com/so-fancy/diff-so-fancy gitconfig should be additionally
+    # configured to apply it for every diff.
+    'diff-so-fancy'
   )
   utils=(
     'p7zip' # 7zip archiver
     # Use to convert & minimize video quality like: ffmpeg -i input.mov -vcodec libx265 -crf 28 output.mp4
     'ffmpeg'
-    # Improves git diff https://github.com/so-fancy/diff-so-fancy gitconfig should be additionally
-    # configured to apply it for every diff.
-    'diff-so-fancy'
     'ghostscript' # interpreter for the PostScript language and for PDF
     'imagemagick' # image manipulation
   )
