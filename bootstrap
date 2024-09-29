@@ -62,14 +62,7 @@ function init() {
   fi
 }
 
-function configure_asdf() {
-  asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
-  # Needs coreutils package
-  asdf plugin add golang https://github.com/asdf-community/asdf-golang.git
-}
-
 clone_external_plugins
-configure_asdf
 
 if [[ $1 == "--force" ]] || [[ $1 == "-f" ]]; then
   init

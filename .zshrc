@@ -54,7 +54,6 @@ function bundle_plugins() {
   plugins=(
     git
     macos
-    asdf # runtime version manager
     z
     command-not-found # suggests package name with requested command if that doesn't exist
     # docker

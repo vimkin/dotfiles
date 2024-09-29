@@ -79,7 +79,6 @@ function install_formulas() {
     'docker-compose'
     'neovim'
     'tmux'
-    'asdf' # runtime version manager
   )
   utils=(
     'p7zip' # 7zip archiver
