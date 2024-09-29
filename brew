@@ -73,7 +73,6 @@ function install_gnu_utils() {
 
 function install_formulas() {
   devUtils=(
-    'rust'
     'python3'
     'n' # node version manager
     'neovim'
