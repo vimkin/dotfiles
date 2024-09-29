@@ -8,7 +8,6 @@ fi
 brew update
 
 function install_casks() {
-  brew tap homebrew/cask
   brew tap homebrew/cask-fonts
 
   devTools=(
@@ -21,7 +20,7 @@ function install_casks() {
     'github' # get native notifications from github, not emails
     # 'wireshark' # network protocol analyzer
   )
-  utilities=(
+  utils=(
     '1password'
     'google-chrome'
     'brave-browser'
@@ -34,7 +33,7 @@ function install_casks() {
     'calibre' # ebook management
     # 'nordvpn'
     'raindropio' # bookmark manager
-    'logi-options-plus' # logitech mouse configuration
+    # 'logi-options+' # logitech mouse configuration
   )
   social=(
     'telegram'
@@ -46,40 +45,49 @@ function install_casks() {
   )
   all=(
     "${devTools[@]}"
-    "${utilities[@]}"
+    "${utils[@]}"
     "${social[@]}"
     "${fonts[@]}"
   )
 
-  brew install --cask $all
+  for cask in "${all[@]}"; do
+    brew install --cask $cask
+  done
 }
 
 function install_gnu_utils() {
-  brew install gnu-sed # patches sed to be unix compatible
+  all=(
+    'gnu-sed' # patches sed to be unix compatible
+    # Replaces standard Mac OS X utilities with GNU core utilities List of all commands can be
+    # found here: https://en.wikipedia.org/wiki/List_of_GNU_Core_Utilities_commands Initially
+    # available with 'g' prefix (grm, gmv etc.)
+    'coreutils'
+    # Extending directory search and file locating capabilities https://www.gnu.org/software/findutils/
+    'findutils'
+  )
 
-  # Replaces standard Mac OS X utilities with GNU core utilities List of all commands can be found
-  # here: https://en.wikipedia.org/wiki/List_of_GNU_Core_Utilities_commands Initially available with
-  # 'g' prefix (grm, gmv etc.)
-  brew install coreutils
-
-  # Extending directory search and file locating capabilities https://www.gnu.org/software/findutils/
-  brew install findutils
+  for formula in "${all[@]}"; do
+    brew install $formula
+  done
 }
 
 function install_formulas() {
   devUtils=(
-    'git'
-    'gh'  #github cli
+    'rust'
     'python3'
-    'bat' # colorful cat
-    'docker-compose'
+    'n' # node version manager
     'neovim'
-    'tmux'
+    'git'
     # Improves git diff https://github.com/so-fancy/diff-so-fancy gitconfig should be additionally
     # configured to apply it for every diff.
     'diff-so-fancy'
+    'gh'  #github cli
+    'docker-compose'
     'nushell'
+    'tmux'
+    'bat' # colorful cat
     'zoxide' # faster way to navigate filesystem
+    'atuin' # improved shell history
   )
   utils=(
     'p7zip' # 7zip archiver
@@ -88,13 +96,14 @@ function install_formulas() {
     'ghostscript' # interpreter for the PostScript language and for PDF
     'imagemagick' # image manipulation
   )
+  all=(
+    "${devUtils[@]}"
+    "${utils[@]}"
+  )
 
-  brew install $devUtils
-  brew install $utils
-
-  # Installing yarn without global node dependency
-  # https://gist.github.com/AGutierrezR/2c22fdd8686e6e30c56949f5e37e214e
-  # brew install yarn --ignore-dependencies
+  for formula in "${all[@]}"; do
+    brew install $formula
+  done
 
   # fzf is a general-purpose command-line fuzzy finder.
   brew install fzf
