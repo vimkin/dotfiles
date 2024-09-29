@@ -42,6 +42,7 @@ function install_casks() {
   fonts=(
     'font-fira-code'
     'font-jetbrains-mono'
+    'font-fira-code-nerd-font'
   )
   all=(
     "${devTools[@]}"
