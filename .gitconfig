@@ -2,7 +2,7 @@
 defaultBranch = main
 templatedir = ~/.git_template # files that do not start with dot
 [core]
-editor = vim
+editor = nvim
 excludesFile = ~/.gitignore.txt
 autocrlf = input # CRLF and LF are not converted
 [commit]

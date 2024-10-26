@@ -1,3 +1,5 @@
+rustup-init.sh
+
 # Compiled source #
 ###################
 *.com
@@ -36,10 +38,6 @@
 ehthumbs.db
 Thumbs.db
 desktop.ini
-
-# Node related files #
-######################
-node_modules
 
 # Ignore IDE (eclipse / intellij / vscode) related files #
 #################################################
