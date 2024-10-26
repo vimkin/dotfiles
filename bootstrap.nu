@@ -57,4 +57,6 @@ def init [] {
   if $env.SHELL != $nu_path {
     chsh -s $nu_path # make nushell the default shell
   }
+
+  nu
 }
