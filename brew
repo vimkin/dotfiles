@@ -23,9 +23,9 @@ function install_casks() {
   utils=(
     '1password'
     'google-chrome'
-    'brave-browser'
     'firefox'
     'inkscape' # vector graphics editor
+    'gimp' # image editor
     'vlc'
     'notion' # note taking
     'obsidian' # note taking
@@ -87,6 +87,7 @@ function install_formulas() {
     'bat' # colorful cat
     'zoxide' # faster way to navigate filesystem
     'atuin' # improved shell history
+    'starship' # cross-shell prompt
   )
   utils=(
     'p7zip' # 7zip archiver
