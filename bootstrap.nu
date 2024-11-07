@@ -9,6 +9,16 @@ if (which rustc | is-empty) {
   bash -c "source ~/.cargo/env"
 }
 
+if (not ('~/.nu_scripts' | path exists)) {
+  print "Cloning nu_scripts repo..."
+
+  gh repo clone nushell/nu_scripts ~/.nu_scripts
+} else {
+  print "Updating nu_scripts repo in ~/.nu_scripts"
+
+  git -C ~/.nu_scripts pull
+}
+
 let absolute_includes = [
   ".aliases.nu",
   ".gitconfig",
