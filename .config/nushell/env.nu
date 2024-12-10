@@ -106,6 +106,9 @@ $env.PATH = ($env.PATH | uniq)
 mkdir ~/.cache/starship
 starship init nu | save -f ~/.cache/starship/init.nu
 
+mkdir ~/.cache/carapace
+carapace _carapace nushell | save --force ~/.cache/carapace/init.nu
+
 mkdir ~/.cache/zoxide
 zoxide init nushell | save -f ~/.cache/zoxide/init.nu
 

@@ -898,13 +898,7 @@ $env.config = {
 }
 
 source ~/.aliases.nu
-source ~/.nu_scripts/custom-completions/git/git-completions.nu
-source ~/.nu_scripts/custom-completions/bat/bat-completions.nu
-source ~/.nu_scripts/custom-completions/curl/curl-completions.nu
-source ~/.nu_scripts/custom-completions/gh/gh-completions.nu
-source ~/.nu_scripts/custom-completions/docker/docker-completions.nu
-source ~/.nu_scripts/custom-completions/npm/npm-completions.nu
-source ~/.nu_scripts/custom-completions/ssh/ssh-completions.nu
 use ~/.cache/starship/init.nu # starship is a prompt
 source ~/.cache/zoxide/init.nu # zoxide is a smarter cd command
 source ~/.cache/atuin/init.nu # atuin is a better history command
+source ~/.cache/carapace/init.nu # carapace is a multi-shell completions

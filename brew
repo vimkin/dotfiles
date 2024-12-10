@@ -72,10 +72,13 @@ function install_gnu_utils() {
 }
 
 function install_formulas() {
+  brew tap rsteube/homebrew-tap
+
   devUtils=(
     'python3'
     'n' # node version manager
     'neovim'
+    'rsteube/tap/carapace' # multi-shell completions
     'git'
     # Improves git diff https://github.com/so-fancy/diff-so-fancy gitconfig should be additionally
     # configured to apply it for every diff.
