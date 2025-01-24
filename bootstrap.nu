@@ -68,5 +68,6 @@ def init [] {
     chsh -s $nu_path # make nushell the default shell
   }
 
+  $env.XDG_CONFIG_HOME = $env.HOME | path join ".config"
   nu
 }
