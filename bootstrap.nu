@@ -22,10 +22,11 @@ if (not ('~/.nu_scripts' | path exists)) {
 let absolute_includes = [
   ".aliases.nu",
   ".gitconfig",
-  ".tmux.conf"
+  ".tmux.conf",
 ]
 | append (glob .git*.txt)
 | append (glob .config/**)
+| append (glob Library/**)
 | path expand
 
 def main [--force: int] {
@@ -68,6 +69,5 @@ def init [] {
     chsh -s $nu_path # make nushell the default shell
   }
 
-  $env.XDG_CONFIG_HOME = $env.HOME | path join ".config"
   nu
 }
