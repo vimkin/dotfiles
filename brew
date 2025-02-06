@@ -19,6 +19,7 @@ function install_casks() {
     'spotify'
     'github' # get native notifications from github, not emails
     # 'wireshark' # network protocol analyzer
+    'ollama' # run LLMs on your machine
   )
   utils=(
     '1password'
@@ -33,7 +34,9 @@ function install_casks() {
     'calibre' # ebook management
     # 'nordvpn'
     'raindropio' # bookmark manager
-    # 'logi-options+' # logitech mouse configuration
+    'bettermouse' # mouse customization
+    'jordanbaird-ice' # powerful menu bar management tool
+    'startupfolder' # run anything at startup by simply placing it in a special folder
   )
   social=(
     'telegram'
