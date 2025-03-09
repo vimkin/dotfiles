@@ -20,6 +20,8 @@ function install_casks() {
     'github' # get native notifications from github, not emails
     # 'wireshark' # network protocol analyzer
     'ollama' # run LLMs on your machine
+    'rapidapi' # API client
+    'postman' # API client
   )
   utils=(
     '1password'
@@ -37,6 +39,7 @@ function install_casks() {
     'bettermouse' # mouse customization
     'jordanbaird-ice' # powerful menu bar management tool
     'startupfolder' # run anything at startup by simply placing it in a special folder
+    'lulu' # open-source firewall
   )
   social=(
     'telegram'
@@ -52,6 +55,18 @@ function install_casks() {
     "${social[@]}"
     "${fonts[@]}"
   )
+
+  # Apple store apps:
+  # - Reeder
+  # - Perplexity
+  # - ScreenBrush
+  # - Reverso
+  # - Synology Drive Client
+
+  # Setapp apps:
+  # - BoltAI
+  # - iStat Menus
+  # - ClearVPN
 
   for cask in "${all[@]}"; do
     brew install --cask $cask
