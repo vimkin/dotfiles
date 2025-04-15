@@ -94,10 +94,13 @@ use std "path add"
 $env.CARGO_HOME = $env.HOME | path join ".cargo"
 $env.N_PREFIX = $env.HOME | path join ".n" # set custom path for n
 $env.PATH = ($env.PATH | split row (char esep))
+
 path add /usr/local/bin
 path add /opt/homebrew/bin
+path add ($env.HOME | path join ".local" "bin")
 path add ($env.CARGO_HOME | path join "bin")
 path add ($env.N_PREFIX | path join "bin")
+
 $env.PATH = ($env.PATH | uniq)
 
 # To load from a custom file you can use:
