@@ -11,7 +11,7 @@ function install_casks() {
   brew tap homebrew/cask-fonts
 
   devTools=(
-    'iterm2'
+    'ghostty'
     'visual-studio-code'
     'insomnia' # API development
     'postman' # API development
@@ -20,8 +20,6 @@ function install_casks() {
     'github' # get native notifications from github, not emails
     # 'wireshark' # network protocol analyzer
     'ollama' # run LLMs on your machine
-    'rapidapi' # API client
-    'postman' # API client
   )
   utils=(
     '1password'
@@ -40,6 +38,7 @@ function install_casks() {
     'jordanbaird-ice' # powerful menu bar management tool
     'startupfolder' # run anything at startup by simply placing it in a special folder
     'lulu' # open-source firewall
+    'keycastr' # show keystrokes on screen
   )
   social=(
     'telegram'
@@ -62,6 +61,7 @@ function install_casks() {
   # - ScreenBrush
   # - Reverso
   # - Synology Drive Client
+  #  - Magnet
 
   # Setapp apps:
   # - BoltAI
