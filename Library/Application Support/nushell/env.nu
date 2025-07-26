@@ -3,7 +3,7 @@
 # version = "0.98.0"
 
 def create_left_prompt [] {
-    let dir = match (do --ignore-shell-errors { $env.PWD | path relative-to $nu.home-path }) {
+    let dir = match (do { $env.PWD | path relative-to $nu.home-path }) {
         null => $env.PWD
         '' => '~'
         $relative_pwd => ([~ $relative_pwd] | path join)
@@ -102,6 +102,7 @@ path add ($env.CARGO_HOME | path join "bin")
 path add ($env.N_PREFIX | path join "bin")
 
 $env.PATH = ($env.PATH | uniq)
+$env.DOCKER_HOST = $"unix://($env.HOME)/.colima/docker.sock"
 
 # To load from a custom file you can use:
 # source ($nu.default-config-dir | path join 'custom.nu')
