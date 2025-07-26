@@ -53,17 +53,26 @@ augroup vimrcEx
   autocmd BufRead,BufNewFile vimrc.local set filetype=vim
 augroup END
 
-" ALE linting events
+" ALE linting events - set up after plugins are loaded
 augroup ale
   autocmd!
-  autocmd VimEnter *
-    \ set updatetime=1000 |
-    \ let g:ale_lint_on_text_changed = 0
-  autocmd CursorHold * call ale#Queue(0)
-  autocmd CursorHoldI * call ale#Queue(0)
-  autocmd InsertEnter * call ale#Queue(0)
-  autocmd InsertLeave * call ale#Queue(0)
+  autocmd VimEnter * call s:SetupALE()
 augroup END
+
+function! s:SetupALE()
+  if exists('*ale#Queue')
+    set updatetime=1000
+    let g:ale_lint_on_text_changed = 0
+
+    augroup ale_events
+      autocmd!
+      autocmd CursorHold * call ale#Queue(0)
+      autocmd CursorHoldI * call ale#Queue(0)
+      autocmd InsertEnter * call ale#Queue(0)
+      autocmd InsertLeave * call ale#Queue(0)
+    augroup END
+  endif
+endfunction
 
 " When the type of shell script is /bin/sh, assume a POSIX-compatible
 " shell for syntax highlighting purposes.
