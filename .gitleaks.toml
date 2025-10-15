@@ -1,0 +1,82 @@
+# Gitleaks configuration for dotfiles repository
+title = "Gitleaks config for dotfiles"
+
+[extend]
+# Optionally use the default gitleaks config as a base
+useDefault = true
+
+[[rules]]
+id = "generic-api-key"
+description = "Generic API Key"
+regex = '''(?i)(api[_-]?key|apikey|api[_-]?secret)[\s]*[=:>][\s]*['"]?[a-zA-Z0-9\-_]{20,}['"]?'''
+tags = ["api", "key"]
+
+[[rules]]
+id = "aws-access-key"
+description = "AWS Access Key"
+regex = '''AKIA[0-9A-Z]{16}'''
+tags = ["aws", "access-key"]
+
+[[rules]]
+id = "aws-secret-key"
+description = "AWS Secret Key"
+regex = '''(?i)aws(.{0,20})?(?-i)['\"][0-9a-zA-Z\/+]{40}['\"]'''
+tags = ["aws", "secret-key"]
+
+[[rules]]
+id = "github-token"
+description = "GitHub Token"
+regex = '''ghp_[0-9a-zA-Z]{36}'''
+tags = ["github", "token"]
+
+[[rules]]
+id = "github-oauth"
+description = "GitHub OAuth Token"
+regex = '''gho_[0-9a-zA-Z]{36}'''
+tags = ["github", "oauth"]
+
+[[rules]]
+id = "slack-token"
+description = "Slack Token"
+regex = '''xox[baprs]-([0-9a-zA-Z]{10,48})'''
+tags = ["slack", "token"]
+
+[[rules]]
+id = "slack-webhook"
+description = "Slack Webhook"
+regex = '''https://hooks\.slack\.com/services/T[a-zA-Z0-9_]{8}/B[a-zA-Z0-9_]{8,12}/[a-zA-Z0-9_]{24}'''
+tags = ["slack", "webhook"]
+
+[[rules]]
+id = "private-key"
+description = "Private Key"
+regex = '''-----BEGIN (RSA|OPENSSH|DSA|EC|PGP) PRIVATE KEY( BLOCK)?-----'''
+tags = ["private-key"]
+
+[[rules]]
+id = "google-api-key"
+description = "Google API Key"
+regex = '''AIza[0-9A-Za-z\\-_]{35}'''
+tags = ["google", "api-key"]
+
+[[rules]]
+id = "password-in-url"
+description = "Password in URL"
+regex = '''[a-zA-Z]{3,10}://[^/\s:@]{3,20}:[^/\s:@]{3,20}@.{1,100}'''
+tags = ["password", "url"]
+
+[[rules]]
+id = "generic-secret"
+description = "Generic Secret"
+regex = '''(?i)(secret|password|passwd|pwd|token)[\s]*[=:>][\s]*['"]?[a-zA-Z0-9\-_!@#$%^&*()]{8,}['"]?'''
+tags = ["secret", "password"]
+
+[rules.allowlist]
+regexes = [
+  # Allow common placeholders
+  '''(?i)(your|my|the|example|test|dummy|fake|sample)[_-]?(secret|password|token|key)''',
+  '''(?i)(secret|password|token|key)[_-]?(here|goes|value|placeholder)''',
+  '''<[^>]+>''',  # Ignore placeholder templates like <YOUR_TOKEN>
+  '''\$\{[^}]+\}''',  # Ignore env var placeholders like ${SECRET}
+  '''\{\{[^}]+\}\}''',  # Ignore template placeholders like {{secret}}
+]
