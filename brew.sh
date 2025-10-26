@@ -118,6 +118,7 @@ function install_formulas() {
     'atuin' # improved shell history
     'starship' # cross-shell prompt
     'stow' # symlink manager
+    'fastfetch' # system information tool
   )
   utils=(
     'p7zip' # 7zip archiver
@@ -129,6 +130,7 @@ function install_formulas() {
     'sd' # intuitive find & replace
     'qpdf' # manipulate pdf files
     'tree' # visualize directory structure
+    'fastfetch' # quickly fetches system information
   )
   all=(
     "${devUtils[@]}"
