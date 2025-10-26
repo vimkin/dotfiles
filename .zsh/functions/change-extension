@@ -1,9 +1,0 @@
-# Change file extensions recursively in current directory
-# Example: change-extension erb haml
-#
-# ℹ️ This function cannot be moved to a standalone script because it needs to have current directory
-# in the scope.
-
-for f in **/*.$1; do
-  mv $f $f:r.$2
-done

@@ -117,6 +117,7 @@ function install_formulas() {
     'zoxide' # faster way to navigate filesystem
     'atuin' # improved shell history
     'starship' # cross-shell prompt
+    'stow' # symlink manager
   )
   utils=(
     'p7zip' # 7zip archiver

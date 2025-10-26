@@ -97,9 +97,11 @@ $env.PATH = ($env.PATH | split row (char esep))
 
 path add /usr/local/bin
 path add /opt/homebrew/bin
+path add /opt/X11/bin
 path add ($env.HOME | path join ".local" "bin")
 path add ($env.CARGO_HOME | path join "bin")
 path add ($env.N_PREFIX | path join "bin")
+path add ($env.HOME | path join ".dotnet" "tools")
 
 $env.PATH = ($env.PATH | uniq)
 $env.DOCKER_HOST = $"unix://($env.HOME)/.colima/docker.sock"

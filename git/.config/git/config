@@ -1,0 +1,99 @@
+[init]
+# Set the default branch name for new repositories to 'main' instead of 'master'
+defaultBranch = main
+# Specify a directory containing templates for new repositories
+templatedir = ~/.config/git/templates
+[core]
+# Set the default text editor for git commands (commit messages, interactive rebase, etc.)
+editor = nvim
+# Handle line endings: convert CRLF to LF on commit, but don't convert on checkout
+# 'input' means only convert CRLF->LF on input (when committing)
+autocrlf = input
+[push]
+# When pushing without specifying a branch, push the current branch to a branch of the same name
+# This prevents accidentally pushing all matching branches
+default = current
+[pull]
+# Always rebase when pulling instead of creating merge commits
+# This keeps a cleaner, linear history by replaying local commits on top of remote changes
+rebase = true
+[branch]
+# Automatically configure new branches to rebase instead of merge when pulling
+autoSetupRebase = always
+# Automatically set up tracking information for new branches
+autoSetupMerge = true
+[merge]
+# Only allow fast-forward merges, preventing merge commits in most cases
+# This keeps history linear and clean by requiring rebasing before merging
+ff = only
+[status]
+# Show all untracked files, including those in subdirectories
+# Default behavior only shows untracked directories, not individual files within them
+showUntrackedFiles = all
+[log]
+# Display dates in relative format (e.g., "2 hours ago", "3 days ago") instead of absolute dates
+date = relative
+[help]
+# Automatically execute the most similar command after 1 second (1 = 1 second delay)
+# If you mistype a command, git will suggest and auto-execute the correction
+autocorrect = 1
+[rebase]
+# Automatically move commits marked with 'fixup!' or 'squash!' to the appropriate position
+# during interactive rebase, making it easier to clean up commit history
+autoSquash = true
+[fetch]
+# Automatically remove remote-tracking branches that no longer exist on the remote
+# This keeps your local repository clean by removing stale branch references
+prune = true
+[commit]
+# Use a template file for commit messages to provide consistent formatting and reminders
+template = ~/.config/git/message.txt
+[diff]
+# Detect renames and copies in diffs, not just renames
+renames = copies
+# Use more meaningful prefixes in diff headers (a/ b/ become i/ w/ c/ o/ etc.)
+mnemonicPrefix = true
+# Use improved heuristics for diff hunks to make them more readable and human-like
+indentHeuristic = true
+# Highlight moved code blocks with alternating colors (zebra pattern)
+colorMoved = zebra
+[rerere]
+# Enable "reuse recorded resolution" - automatically resolve merge conflicts
+# that have been resolved before in the same way
+enabled = true
+[advice]
+# Disable helpful hints in git status output for a cleaner, more concise display
+statusHints = false
+[color]
+# Enable colored output automatically when outputting to a terminal
+# Colors are disabled when piping to files or other commands
+ui = auto
+[alias]
+# Shortcut to stage all changes (modified, deleted, and new files)
+aa = add --all
+# Interactive staging - choose which hunks to stage
+ap = add --patch
+# Show remote branches sorted by commit date with author info and colors
+branches = "for-each-ref --sort=-committerdate --format=\"%(color:blue)%(authordate:relative)\t%(color:red)%(authorname)\t%(color:white)%(color:bold)%(refname:short)\" refs/remotes"
+# Commit with verbose output (shows diff in commit message editor)
+ci = commit -v
+# Force push but safer - only if remote hasn't changed since last fetch
+pf = push --force-with-lease
+# Show the last commit
+last = log -1 HEAD
+# Remove files from staging area (opposite of git add)
+unstage = reset HEAD --
+[filter "lfs"]
+# Git LFS (Large File Storage) configuration for handling large files
+# Command to run when checking out LFS files (converts pointer to actual file)
+smudge = git-lfs smudge -- %f
+# Long-running process for better performance with LFS operations
+process = git-lfs filter-process
+# LFS filter is required - fail if LFS is not available
+required = true
+# Command to run when adding LFS files (converts file to pointer)
+clean = git-lfs clean -- %f
+[safe]
+# Mark this directory as safe to prevent "dubious ownership" warnings
+# Useful when the repository is owned by a different user or in shared environments
+directory = ~/.nu_scripts

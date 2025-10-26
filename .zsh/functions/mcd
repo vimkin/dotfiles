@@ -1,6 +1,0 @@
-# Make directory and change into it.
-#
-# ℹ️ This function cannot be moved to a standalone script because it needs to have current directory
-# in the scope.
-
-mkdir -p $1 && cd $1

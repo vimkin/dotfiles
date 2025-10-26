@@ -40,14 +40,3 @@ desktop.ini
 # Node related files #
 ######################
 node_modules
-
-# Ignore IDE (eclipse / intellij / vscode) related files #
-#################################################
-.classpath
-.project
-.settings
-.idea
-.metadata
-*.iml
-*.ipr
-.vscode
