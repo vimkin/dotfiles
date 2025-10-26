@@ -1,0 +1,11 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Enable time module to show timestamp
+[time]
+disabled = false
+format = '🕐 [$time]($style) '
+time_format = "%T"
+
+[directory]
+truncation_length = 3
+truncation_symbol = "…/"

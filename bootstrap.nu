@@ -20,7 +20,7 @@ if (not ('~/.nu_scripts' | path exists)) {
 }
 
 def main [] {
-  stow -v nushell nvim tmux git fastfetch
+  stow -v nushell nvim tmux git fastfetch starship
 
   let $nu_path = (which nu | get path | get 0)
 
