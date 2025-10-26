@@ -49,6 +49,18 @@ def tat [session_name?: string] {
   }
 }
 
+# Remove dangling symlinks in the current directory
+def remove-dangling-symlinks [] {
+  ls -a | where type == symlink | each { |it|
+    let target = (^readlink $it.name | str trim)
+
+    if not ($target | path exists) {
+      rm $it.name
+      print $"Removed: ($it.name) -> ($target)"
+    }
+  }
+}
+
 # Rename current branch and update remote
 def git-rename-branch [new_name: string] {
   # Get current branch name
