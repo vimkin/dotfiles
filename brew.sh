@@ -126,6 +126,9 @@ function install_formulas() {
     'ghostscript' # interpreter for the PostScript language and for PDF
     'imagemagick' # image manipulation
     'ripgrep' # faster grep
+    'sd' # intuitive find & replace
+    'qpdf' # manipulate pdf files
+    'tree' # visualize directory structure
   )
   all=(
     "${devUtils[@]}"
