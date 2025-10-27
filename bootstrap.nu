@@ -19,7 +19,11 @@ if (not ('~/.nu_scripts' | path exists)) {
   git -C ~/.nu_scripts pull
 }
 
-def main [] {
+def main [--update-homebrew (-u) = false] {
+  if $update_homebrew {
+    brew bundle install
+  }
+
   stow -v nushell nvim tmux git fastfetch starship
 
   let $nu_path = (which nu | get path | get 0)
