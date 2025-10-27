@@ -1,49 +1,53 @@
-![logo](docs/logo.png)
+# Dotfiles
 
-## What's in the box?
-- Install packages and GUI apps with Homebrew
-- [iTerm2](https://github.com/gnachman/iTerm2)
-- [Zsh](https://www.zsh.org/)
-- [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh)
-- [p10k zsh theme](https://github.com/romkatv/powerlevel10k)
-- NeoVim
-- tmux
-- [MacOS Shortcuts](docs/MACOS_SHORTCUTS.md)
-- Colorful and shiny cli experience 🌈
+My modular dotfiles configuration for macOS using GNU Stow for symlink management.
+
+Each tool's configuration is organized in its own directory, making it easy to install or remove specific components as needed.
+
+## Main Features
+
+- **Nushell**: Modern shell configuration with custom scripts and completions
+- **Neovim**: Text editor configuration with plugins and custom settings
+- **Starship**: Cross-shell prompt with custom theming
+- **Tmux**: Terminal multiplexer with productivity-focused keybindings
 
 ## Installation
 
-1. `cd $HOME && git clone https://github.com/vimkin/dotfiles.git && cd dotfiles`
-2. **Homebrew**
+### Prerequisites
 
-    First install necessary packages and GUI applications from Homebrew. Execute the brew script by running following command in dotfiles repo
-    *(\*the script might guide you in case of missing dependencies)*:
-    ```
-    brew
-    ```
-    To exclude GUI programs(casks) remove/comment the following line in [brew](brew) file:
-    ```diff
-    - install_casks
-    ```
+> [!IMPORTANT]
+> Ensure you have [Homebrew](https://brew.sh/) installed on your system.
 
-3. **Bootstrap dotfiles**
+### Setup
 
-    Execute the bootstrap script to install the dotfiles *(\*the script will guide you in case of missing dependencies)*:
-    ```
-    zsh bootstrap
-    ```
-    *\*`--force` or `-f` parameter can be added to avoid the confirmation prompt.*
+1. Clone the repository:
 
-    After the successful completion most of the dotfiles are symlinked to the `$HOME` folder, except few exceptions like `.bin` or `.config` folders.
+```bash
+git clone https://github.com/vimkin/dotfiles.git ~/.dotfiles
+cd ~/.dotfiles
+```
 
-    Changes between originals and symlinked files are of course synced, so feel free to modify whether former or latter, makes no difference.
+2. Install dependencies and configure:
 
-    **Caveat**: deletions are not automatically synced with a root folder. Deleting originals leads to dangling symlinks. To clean up run the following command in your root `find -L . -maxdepth 1 -type l | xargs rm -rf`, which finds and removes the broken symlinks.
+```bash
+brew bundle install
+nu ./bootstrap.nu
+```
 
-## Source of inspiration
-* [thoughtbot/dotfiles](https://github.com/thoughtbot/dotfiles)
-* [mathiasbynens/dotfiles](https://github.com/mathiasbynens/dotfiles)
-* [dotfiles.github.io](https://dotfiles.github.io/)
+The above commands will:
 
-## Further reading
-* [Lightning Fast ZSH Performance](https://joshghent.com/zsh-speed/)
+- ‼️ Set Nushell as the default shell
+- Install required packages and App Store applications via `brew bundle`
+- Use GNU Stow to create symlinks for each configuration module (nushell, nvim, tmux, etc.)
+- Clone additional Nushell scripts from the community repository
+
+### Manual Configuration
+
+For selective installation, use Stow directly:
+
+```bash
+stow nushell  # Install only Nushell config
+stow nvim     # Install only Neovim config
+stow tmux     # Install only Tmux config
+stow starship # Install only Starship config
+```
