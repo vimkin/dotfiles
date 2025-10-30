@@ -1,0 +1,4 @@
+#!/usr/bin/env nu
+
+colima start
+zellij -l local-servers attach --create-background auto-start-local-servers

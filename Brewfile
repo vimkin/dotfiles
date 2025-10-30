@@ -29,6 +29,7 @@ brew "starship" # Cross-shell prompt
 brew "stow" # Symlink farm manager
 brew "tmux"
 brew "tree" # Display directories as trees (with optional color/HTML output)
+brew "zellij" # Modern terminal multiplexer
 brew "zoxide" # Shell extension to navigate filesystem faster
 cask "1password"
 cask "bettermouse" # Utility improving 3rd party mouse performance and functionalities

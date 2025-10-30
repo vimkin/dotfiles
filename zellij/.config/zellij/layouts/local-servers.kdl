@@ -1,0 +1,9 @@
+layout {
+  tab name="mcpx local" {
+    pane {
+      cwd "~/.mcpx"
+      command "docker"
+      args "run" "--rm" "--init" "--pull" "always" "-v" "./:/lunar/packages/mcpx-server/config" "-p" "9000:9000" "-p" "5288:5173" "-p" "9001:9001" "-p" "3000:3000" "--name" "mcpx" "us-central1-docker.pkg.dev/prj-common-442813/mcpx/mcpx:latest"
+    }
+  }
+}

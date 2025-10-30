@@ -24,7 +24,7 @@ def main [--update-homebrew (-u) = false] {
     brew bundle install
   }
 
-  stow -v nushell nvim tmux git fastfetch starship atuin hammerspoon
+  stow -v nushell nvim tmux git fastfetch starship atuin hammerspoon zellij startup
 
   let $nu_path = (which nu | get path | get 0)
 
