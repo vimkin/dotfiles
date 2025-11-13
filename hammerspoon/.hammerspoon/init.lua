@@ -1,12 +1,16 @@
-hs.hotkey.bind({"cmd", "alt"}, "1", function()
+hs.hotkey.bind({"alt"}, "0", function()
+  hs.application.launchOrFocus("/Applications/Visual Studio Code.app")
+end)
+
+hs.hotkey.bind({"alt"}, "1", function()
   hs.application.launchOrFocus("/Applications/Firefox.app")
 end)
 
-hs.hotkey.bind({"cmd", "alt"}, "2", function()
+hs.hotkey.bind({"alt"}, "2", function()
   hs.application.launchOrFocus("/Applications/Ghostty.app")
 end)
 
-hs.hotkey.bind({"cmd", "alt"}, "3", function()
+hs.hotkey.bind({"alt"}, "3", function()
   hs.application.launchOrFocus("/Applications/Obsidian.app")
 end)
 
