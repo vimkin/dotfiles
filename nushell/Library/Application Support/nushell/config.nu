@@ -895,6 +895,8 @@ $env.config = {
 source ~/.config/nushell/aliases.nu
 use ~/.nu_scripts/aliases/git/git-aliases.nu *
 
+source ~/.config/nushell/run-at.nu
+
 source ~/.cache/starship/init.nu # starship is a prompt
 source ~/.cache/zoxide/init.nu # zoxide is a smarter cd command
 source ~/.cache/atuin/init.nu # atuin is a better history command
