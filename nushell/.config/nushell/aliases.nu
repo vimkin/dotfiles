@@ -3,7 +3,7 @@ alias ln = ln -v
 alias tf = tail -f
 alias cl = clear
 
-alias hosts = sudo vim /etc/hosts
+alias hosts = sudo nvim /etc/hosts
 alias ff = fastfetch
 
 # List files and directories with hidden files included, sorted by type then name (case-insensitive)
