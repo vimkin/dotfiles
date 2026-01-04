@@ -1,6 +1,7 @@
 rustup-init.sh
 .config/nvim/plugged
 nushell/.config/nushell/history.txt
+nvim/.config/nvim/lazy-lock.json
 
 # Compiled source
 *.com
