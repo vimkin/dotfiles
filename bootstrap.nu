@@ -19,16 +19,26 @@ if (not ('~/.nu_scripts' | path exists)) {
   git -C ~/.nu_scripts pull
 }
 
-def main [--update-homebrew (-u) = false] {
-  if $update_homebrew {
-    brew bundle install
+def main [] {
+  # Base packages for all systems
+  let base_packages = [nushell nvim tmux git fastfetch starship atuin zellij]
+  # Add macOS-specific packages
+  let packages = if (uname | get operating-system | str contains 'Darwin') {
+    $base_packages | append [hammerspoon startup]
+  } else {
+    $base_packages
   }
 
-  stow -v nushell nvim tmux git fastfetch starship atuin hammerspoon zellij startup
+  # Execute stow with the package list
+  stow -v ...$packages
 
   let $nu_path = (which nu | get path | get 0)
 
   if $env.SHELL != $nu_path {
+    if (not (open /etc/shells | lines | any {|line| $line == $nu_path})) {
+      $nu_path | sudo tee -a /etc/shells
+    }
+
     chsh -s $nu_path # make nushell the default shell
   }
 
