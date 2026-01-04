@@ -1,5 +1,6 @@
 rustup-init.sh
 .config/nvim/plugged
+nushell/.config/nushell/history.txt
 
 # Compiled source
 *.com
