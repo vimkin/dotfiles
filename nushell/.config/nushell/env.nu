@@ -102,6 +102,7 @@ path add ($env.HOME | path join ".local" "bin")
 path add ($env.CARGO_HOME | path join "bin")
 path add ($env.N_PREFIX | path join "bin")
 path add ($env.HOME | path join ".dotnet" "tools")
+path add ($env.HOME | path join ".nix-profile" "bin")
 
 $env.PATH = ($env.PATH | uniq)
 $env.DOCKER_HOST = $"unix://($env.HOME)/.colima/docker.sock"
