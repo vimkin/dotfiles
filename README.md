@@ -31,14 +31,18 @@ cd ~/dotfiles
 2. Install dependencies and configure:
 
 ```bash
-brew bundle install # For macOS
-nix-env -if packages.nix # For Linux
+# For macOS
+brew bundle install
+# For Linux
+nix-env -if packages.nix
+
 nu ./bootstrap.nu
 ```
 
 The above commands will:
 
 - ‼️ Set Nushell as the default shell
+- Setup rustup and install Rust toolchains
 - Install packages listed in the Brewfile (macOS) or packages.nix (Linux)
 - For macOS, additionally install App Store applications
 - Use GNU Stow to create symlinks for each configuration module (nushell, nvim, etc.)
