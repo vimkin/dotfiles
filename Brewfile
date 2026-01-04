@@ -3,7 +3,6 @@ tap "rsteube/tap"
 brew "atuin" # Improved shell history
 brew "bat" # Clone of cat(1) with syntax highlighting and Git integration
 brew "diff-so-fancy" # Good-lookin' diffs with diff-highlight and more
-brew "docker-compose"
 brew "docker", link: false
 brew "fastfetch" # faster neofetch alternative
 brew "ffmpeg"
