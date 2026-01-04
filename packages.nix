@@ -27,4 +27,9 @@ with pkgs; [
   uv
   zellij
   zoxide
+
+  # Fonts
+  fira-code
+  jetbrains-mono
+  nerd-fonts.fira-code
 ]
