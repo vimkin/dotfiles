@@ -2,8 +2,10 @@ tap "rsteube/tap"
 
 brew "atuin" # Improved shell history
 brew "bat" # Clone of cat(1) with syntax highlighting and Git integration
+brew "colima" # Container runtimes on macOS with minimal setup
 brew "diff-so-fancy" # Good-lookin' diffs with diff-highlight and more
-brew "docker", link: false
+brew "docker-credential-helper"
+brew "docker"
 brew "fastfetch" # faster neofetch alternative
 brew "ffmpeg"
 brew "fzf" # Command-line fuzzy finder
@@ -33,7 +35,6 @@ brew "zoxide" # Shell extension to navigate filesystem faster
 cask "1password"
 cask "bettermouse" # Utility improving 3rd party mouse performance and functionalities
 cask "calibre" # E-books management software
-cask "docker-desktop"
 cask "firefox"
 cask "ghostty"
 cask "gimp"
@@ -46,6 +47,7 @@ cask "insomnia"
 cask "jordanbaird-ice" # Menu bar manager
 cask "keycastr" # Open-source keystroke visualiser
 cask "keymapp" # ZSA keyboard firmware flasher
+cask "localsend" # Easy file sharing over local network
 cask "notion"
 cask "obsidian"
 cask "ollama-app"
