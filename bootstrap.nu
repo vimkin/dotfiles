@@ -7,6 +7,9 @@ if (which rustc | is-empty) {
 
   sh rustup-init.sh -y
   bash -c "source ~/.cargo/env"
+} else {
+  # Check for Rust updates
+  rustup check
 }
 
 if (not ('~/.nu_scripts' | path exists)) {
