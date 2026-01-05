@@ -1,0 +1,19 @@
+# This file lists applications installed directly from developer websites or via Flatpak.
+# Uncommented lines should be installed with Flatpak.
+
+# https://support.1password.com/install-linux/#debian-or-ubuntu
+# https://code.visualstudio.com/docs/setup/linux#_debian-and-ubuntu-based-distributions
+# https://docs.ollama.com/linux#install
+# https://github.com/mkasberg/ghostty-ubuntu until Ghostty is available via Flatpak
+
+io.podman_desktop.PodmanDesktop
+com.calibre_ebook.calibre
+org.localsend.localsend_app
+org.gimp.GIMP
+io.github.ungoogled_software.ungoogled_chromium
+org.inkscape.Inkscape
+rest.insomnia.Insomnia
+com.getpostman.Postman
+md.obsidian.Obsidian
+com.spotify.Client
+org.videolan.VLC

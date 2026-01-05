@@ -31,10 +31,12 @@ cd ~/dotfiles
 2. Install dependencies and configure:
 
 ```bash
-# For macOS
+# For macOS: Install everything at once with Homebrew
 brew bundle install
+
 # For Linux
-nix-env -if packages.nix
+nix-env -if packages.nix # Install packages and fonts with nix
+rg -vN '^(#|$)' apps.txt | xargs flatpak install -y flathub # This installs most of the apps with Flatpak. However, some apps need to be installed manually, check apps.txt
 
 nu ./bootstrap.nu
 ```
