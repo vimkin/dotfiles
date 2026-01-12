@@ -1,15 +1,23 @@
 # Dotfiles
 
-My modular dotfiles configuration for macOS (Homebrew) and Linux (nix package manager) using GNU Stow for symlink management.
+My modular dotfiles configuration for macOS (Homebrew) and Linux (Arch and Debian downstreams like Ubuntu and Pop!_OS) using GNU Stow for symlink management.
 
 Each tool's configuration is organized in its own directory, making it easy to install or remove specific components as needed.
 
-## Main Features
+## Features
+
+Some of the configurations included:
 
 - **Nushell**: Modern shell configuration with custom scripts and completions
 - **Neovim**: Text editor configuration with plugins and custom settings
+- **Git**: Version control system configuration and aliases
+- **Tmux**: Terminal multiplexer configuration
 - **Starship**: Cross-shell prompt with custom theming
 - **Zellij**: Terminal workspace manager configuration
+- **Atuin**: Shell history sync and search configuration
+- **Fastfetch**: System information tool configuration
+- **Hammerspoon**: macOS automation and window management (macOS only)
+- **Startup**: macOS launch agent configurations (macOS only)
 
 ## Installation
 
@@ -17,7 +25,9 @@ Each tool's configuration is organized in its own directory, making it easy to i
 
 > [!IMPORTANT]
 > **macOS**: Ensure you have [Homebrew](https://brew.sh/) installed on your system.
-> **Linux**: Ensure you have [nix package manager](https://nixos.org/download.html) installed on your system.
+
+> [!IMPORTANT]
+> **Linux**: If using Debian downstreams on LTS, the best way to get the latest packages is the [nix package manager](https://nixos.org/download.html). Ensure it is installed on your system.
 
 ### Setup
 
@@ -30,25 +40,45 @@ cd ~/dotfiles
 
 2. Install dependencies and configure:
 
+**macOS:**
+
 ```bash
-# For macOS: Install everything at once with Homebrew
+# Install everything (CLI, GUI app, App Store apps, fonts) at once with Homebrew
 brew bundle install
+```
 
-# For Linux
-nix-env -if packages.nix # Install packages and fonts with nix
-rg -vN '^(#|$)' apps.txt | xargs flatpak install -y flathub # This installs most of the apps with Flatpak. However, some apps need to be installed manually, check apps.txt
+**Linux (Debian downstreams):**
 
+```bash
+# Install packages and fonts with nix
+nix-env -if packages.nix
+# Install Flatpak packages from sysconfig.yaml. Some apps are better to install from official .deb files; check which software distributions are recommended by developers.
+flatpak install flathub $(yq '.packages.flatpak[]' sysconfig.yaml)
+```
+
+**Linux (Arch-based):**
+
+```bash
+sudo pacman -S --needed $(yq '.packages.pacman.cli[]' sysconfig.yaml)
+sudo pacman -S --needed $(yq '.packages.pacman.gui[]' sysconfig.yaml)
+sudo pacman -S --needed $(yq '.packages.pacman.fonts[]' sysconfig.yaml)
+paru -S --needed $(yq '.packages.paru.cli[]' sysconfig.yaml)
+paru -S --needed $(yq '.packages.paru.gui[]' sysconfig.yaml)
+flatpak install flathub $(yq '.packages.flatpak[]' sysconfig.yaml)
+```
+
+3. Run the bootstrap script:
+
+```bash
 nu ./bootstrap.nu
 ```
 
-The above commands will:
+The above command will:
 
 - ‼️ Set Nushell as the default shell
-- Setup rustup and install Rust toolchains
-- Install packages listed in the Brewfile (macOS) or packages.nix (Linux)
-- For macOS, additionally install App Store applications
+- Set up rustup and install Rust toolchains
 - Use GNU Stow to create symlinks for each configuration module (nushell, nvim, etc.)
-- Clone additional Nushell scripts from the community repository
+- Clone and link additional Nushell scripts from the community repository
 
 ### Manual Configuration
 

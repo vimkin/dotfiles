@@ -25,6 +25,7 @@ with pkgs; [
   stow
   tree
   uv
+  yq
   zellij
   zoxide
 

@@ -1,0 +1,65 @@
+packages:
+  pacman:
+    gui:
+      - cmake
+      - ghostty
+      - gparted
+      - keepassxc
+    cli:
+      - 7zip
+      - atuin
+      - bat
+      - btop
+      - cuda # needed for whisper and ollama
+      - docker
+      - fastfetch
+      - ffmpeg
+      - flatpak
+      - fzf
+      - git
+      - git-delta
+      - github-cli
+      - go-yq
+      - gvfs-smb # required for COSMIC Files to detect SMB
+      - htop
+      - imagemagick
+      - jq
+      - ncdu
+      - neovim
+      - nushell
+      - ollama-cuda
+      - qpdf
+      - ripgrep
+      - sd
+      - starship
+      - stow
+      - tree
+      - uv # Python package and project manager
+      - zellij
+      - zoxide
+    fonts:
+      - ttf-fira-code
+      - ttf-jetbrains-mono
+      - ttf-jetbrains-mono-nerd
+
+  paru:
+    # ALWAYS REVIEW PKGBUILD FILES!
+    gui:
+      - proton-pass-bin
+      - visual-studio-code-bin
+    cli:
+      - carapace-bin
+
+  flatpak:
+    - com.calibre_ebook.calibre
+    - com.getpostman.Postman
+    - com.github.tchx84.Flatseal
+    - com.spotify.Client
+    - io.github.ungoogled_software.ungoogled_chromium
+    - io.podman_desktop.PodmanDesktop
+    - md.obsidian.Obsidian
+    - org.gimp.GIMP
+    - org.inkscape.Inkscape
+    - org.localsend.localsend_app
+    - org.videolan.VLC
+    - rest.insomnia.Insomnia
