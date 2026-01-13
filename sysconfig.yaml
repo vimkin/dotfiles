@@ -54,12 +54,14 @@ packages:
     - com.calibre_ebook.calibre
     - com.getpostman.Postman
     - com.github.tchx84.Flatseal
+    - com.github.xournalpp.xournalpp
     - com.spotify.Client
     - io.github.ungoogled_software.ungoogled_chromium
     - io.podman_desktop.PodmanDesktop
     - md.obsidian.Obsidian
     - org.gimp.GIMP
     - org.inkscape.Inkscape
+    - org.libreoffice.LibreOffice
     - org.localsend.localsend_app
     - org.videolan.VLC
     - rest.insomnia.Insomnia
