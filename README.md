@@ -25,8 +25,6 @@ Some of the configurations included:
 
 > [!IMPORTANT]
 > **macOS**: Ensure you have [Homebrew](https://brew.sh/) installed on your system.
-
-> [!IMPORTANT]
 > **Linux**: If using Debian downstreams on LTS, the best way to get the latest packages is the [nix package manager](https://nixos.org/download.html). Ensure it is installed on your system.
 
 ### Setup
