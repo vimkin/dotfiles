@@ -29,7 +29,7 @@ def main [] {
   let packages = if (uname | get operating-system | str contains 'Darwin') {
     $base_packages | append [hammerspoon startup]
   } else {
-    $base_packages
+    $base_packages | append [cosmic]
   }
 
   # Execute stow with the package list

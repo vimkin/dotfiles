@@ -1,0 +1,111 @@
+[
+    (
+        name: "Code",
+        icon: "folder-symbolic",
+        filter: AppIds([
+            "com.mitchellh.ghostty",
+            "code",
+            "zellij",
+            "nvim",
+            "rest.insomnia.Insomnia",
+            "io.podman_desktop.PodmanDesktop",
+            "com.getpostman.Postman",
+        ]),
+    ),
+    (
+        name: "Gaming",
+        icon: "folder-symbolic",
+        filter: AppIds([
+            "protontricks",
+            "winetricks",
+            "steam",
+        ]),
+    ),
+    (
+        name: "Productivity",
+        icon: "folder-symbolic",
+        filter: Categories(
+            categories: [
+                "Office",
+            ],
+            exclude: [
+                "com.mitchellh.ghostty",
+                "Alacritty",
+                "io.github.ungoogled_software.ungoogled_chromium",
+            ],
+            include: [
+                "org.gnome.Totem",
+                "org.gnome.eog",
+                "simple-scan",
+                "thunderbird",
+                "proton-pass",
+                "micro",
+            ],
+        ),
+    ),
+    (
+        name: "cosmic-system",
+        icon: "folder-symbolic",
+        filter: Categories(
+            categories: [
+                "System",
+            ],
+            exclude: [
+                "com.system76.CosmicStore",
+                "com.system76.CosmicTerm",
+                "com.mitchellh.ghostty",
+                "Alacritty",
+                "gparted",
+                "system-config-printer",
+                "cups",
+                "proton-pass",
+                "zellij",
+                "io.github.ungoogled_software.ungoogled_chromium",
+            ],
+            include: [
+                "gnome-language-selector",
+                "im-config",
+                "org.freedesktop.IBus.Setup",
+                "system76-driver",
+                "bvnc",
+                "bssh",
+                "org.pulseaudio.pavucontrol",
+                "btop",
+            ],
+        ),
+    ),
+    (
+        name: "cosmic-utilities",
+        icon: "folder-symbolic",
+        filter: Categories(
+            categories: [
+                "Utility",
+            ],
+            exclude: [
+                "com.system76.CosmicEdit",
+                "com.system76.CosmicFiles",
+                "com.mitchellh.ghostty",
+                "Alacritty",
+                "proton-pass",
+                "btop",
+                "zellij",
+                "nvim",
+                "micro",
+                "io.github.ungoogled_software.ungoogled_chromium",
+                "winetricks",
+            ],
+            include: [
+                "nm-connection-editor",
+                "org.gnome.Meld",
+                "nvidia-settings",
+                "gparted",
+                "hp-uiscan",
+                "cmake-gui",
+                "system-config-printer",
+                "cups",
+                "vim",
+                "org.gnome.Loupe",
+            ],
+        ),
+    ),
+]
