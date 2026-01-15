@@ -17,6 +17,7 @@ repos:
       - id: check-merge-conflict
       - id: check-yaml
       - id: end-of-file-fixer
+        exclude: ^cosmic/
       - id: trailing-whitespace
       - id: mixed-line-ending
 
