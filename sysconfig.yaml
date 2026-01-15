@@ -2,14 +2,18 @@ packages:
   pacman:
     gui:
       - cmake
+      - firefox
       - ghostty
       - gparted
       - keepassxc
+      - protonmail-bridge
+      - thunderbird
     cli:
       - 7zip
       - atuin
       - bat
       - btop
+      - chafa # terminal image viewer
       - cuda # needed for whisper and ollama
       - docker
       - fastfetch
@@ -35,6 +39,7 @@ packages:
       - stow
       - tree
       - uv # Python package and project manager
+      - wl-clipboard # clipboard support for Wayland. Commands: wl-copy and wl-paste
       - zellij
       - zoxide
     fonts:
