@@ -5,8 +5,8 @@ packages:
       - firefox
       - ghostty
       - gparted
-      - keepassxc
       - protonmail-bridge
+      - seahorse
       - thunderbird
     cli:
       - 7zip
@@ -23,11 +23,13 @@ packages:
       - git
       - git-delta
       - github-cli
+      - gnome-keyring
       - go-yq
       - gvfs-smb # required for COSMIC Files to detect SMB
       - htop
       - imagemagick
       - jq
+      - libsecret
       - ncdu
       - neovim
       - nushell
