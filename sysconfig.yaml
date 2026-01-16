@@ -50,6 +50,7 @@ packages:
   paru:
     # ALWAYS REVIEW PKGBUILD FILES!
     gui:
+      - crow-translate
       - proton-pass-bin
       - visual-studio-code-bin
     cli:
