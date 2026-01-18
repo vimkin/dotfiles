@@ -12,4 +12,13 @@
         ],
         key: "Tab",
     ): Disable,
+    (
+        modifiers: [
+            Ctrl,
+            Alt,
+            Shift,
+        ],
+        key: "t",
+        description: Some("Reverso Translate Selection"),
+    ): Spawn("~/.local/bin/reverso-translate-clipboard.sh"),
 }
