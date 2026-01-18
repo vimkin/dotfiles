@@ -43,6 +43,7 @@ packages:
       - tree
       - uv # Python package and project manager
       - wl-clipboard # clipboard support for Wayland. Commands: wl-copy and wl-paste
+      - xdg-desktop-portal-gtk # required for Flatpak apps to smoothly work on GTK-based desktops
       - zellij
       - zoxide
     fonts:
@@ -53,7 +54,8 @@ packages:
   paru:
     # ALWAYS REVIEW PKGBUILD FILES!
     gui:
-      - crow-translate
+      # MARK: translateSelection with Crow and Wayland doesn't work well for now
+      # - crow-translate
       - proton-pass-bin
       - visual-studio-code-bin
       - webapp-manager # run websites as apps
