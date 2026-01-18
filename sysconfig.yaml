@@ -66,6 +66,7 @@ packages:
     - com.github.tchx84.Flatseal
     - com.github.xournalpp.xournalpp
     - com.spotify.Client
+    - io.github.cosmic_utils.minimon-applet # system monitor applet for COSMIC
     - io.github.ungoogled_software.ungoogled_chromium
     - io.podman_desktop.PodmanDesktop
     - md.obsidian.Obsidian
