@@ -1,0 +1,13 @@
+[core]
+repo_version=1
+mode=bare-user-only
+min-free-space-size=500MB
+
+[remote "cosmic"]
+url=https://apt.pop-os.org/cosmic/
+xa.title=COSMIC
+gpg-verify=true
+gpg-verify-summary=true
+xa.comment=COSMIC Flatpak Repository
+xa.description=COSMIC Flatpak Repository
+xa.homepage=https://pop-os.org/
