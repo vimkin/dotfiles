@@ -1,6 +1,7 @@
 packages:
   pacman:
     gui:
+      - brave-bin
       - cmake
       - firefox
       - ghostty
@@ -55,6 +56,7 @@ packages:
       - crow-translate
       - proton-pass-bin
       - visual-studio-code-bin
+      - webapp-manager # run websites as apps
     cli:
       - carapace-bin
 
