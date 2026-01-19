@@ -32,7 +32,6 @@ brew "tmux"
 brew "tree" # Display directories as trees (with optional color/HTML output)
 brew "zellij" # Modern terminal multiplexer
 brew "zoxide" # Shell extension to navigate filesystem faster
-cask "1password"
 cask "bettermouse" # Utility improving 3rd party mouse performance and functionalities
 cask "calibre" # E-books management software
 cask "firefox"
@@ -52,6 +51,7 @@ cask "notion"
 cask "obsidian"
 cask "ollama-app"
 cask "postman"
+cask "proton-pass"
 cask "setapp" # Collection of apps available by subscription
 cask "spotify"
 cask "startupfolder" # Manage login items
@@ -72,7 +72,6 @@ cask "font-fira-code"
 cask "font-jetbrains-mono"
 
 # Mac App Store Apps
-mas "1Password for Safari", id: 1569813296
 mas "Anybox", id: 1593408455
 mas "Consent-O-Matic", id: 1606897889
 mas "Magnet", id: 441258766
