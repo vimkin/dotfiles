@@ -28,6 +28,8 @@ packages:
       - go-yq
       - gvfs-smb # required for COSMIC Files to detect SMB
       - htop
+      - hunspell-de # German dictionary for spell checking
+      - hunspell-ru # Russian dictionary for spell checking
       - imagemagick
       - jq
       - libsecret
