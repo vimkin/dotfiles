@@ -37,6 +37,7 @@ packages:
       - neovim
       - nushell
       - ollama-cuda
+      - poppler
       - qpdf
       - ripgrep
       - sd
@@ -46,6 +47,7 @@ packages:
       - uv # Python package and project manager
       - wl-clipboard # clipboard support for Wayland. Commands: wl-copy and wl-paste
       - xdg-desktop-portal-gtk # required for Flatpak apps to smoothly work on GTK-based desktops
+      - yazi
       - zellij
       - zoxide
     fonts:
