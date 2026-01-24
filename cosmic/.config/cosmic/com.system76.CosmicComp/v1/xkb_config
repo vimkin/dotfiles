@@ -1,8 +1,8 @@
 (
     rules: "",
     model: "",
-    layout: "de,us",
-    variant: "us,",
+    layout: "de,ru,us",
+    variant: "us,,",
     options: None,
     repeat_delay: 600,
     repeat_rate: 25,
