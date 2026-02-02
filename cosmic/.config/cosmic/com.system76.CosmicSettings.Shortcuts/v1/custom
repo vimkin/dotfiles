@@ -21,4 +21,23 @@
         key: "t",
         description: Some("Reverso Translate Selection"),
     ): Spawn("~/.local/bin/reverso-translate-clipboard.sh"),
+    (
+        modifiers: [
+          Ctrl,
+          Alt,
+          Shift,
+        ],
+        key: "d",
+        description: Some("Insert date at the cursor position"),
+    ): Spawn("~/.local/bin/insert-date.sh"),
+    (
+        modifiers: [
+          Ctrl,
+          Alt,
+          Shift,
+          Super,
+        ],
+        key: "d",
+        description: Some("Insert date at the cursor position"),
+    ): Spawn("~/.local/bin/insert-date.sh --format datetime"),
 }
