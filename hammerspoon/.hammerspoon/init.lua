@@ -26,7 +26,7 @@ hs.hotkey.bind({"ctrl", "alt", "shift"}, "d", function()
   insertFormattedDateTime("%Y%m%d")
 end)
 
--- Insert current time in YYYYMMDDHHMMSS format at cursor position
+-- Insert current time in YYYYMMDDTHHMMSS format at cursor position
 hs.hotkey.bind({"cmd", "ctrl", "alt", "shift"}, "d", function()
-  insertFormattedDateTime("%Y%m%d%H%M%S")
+  insertFormattedDateTime("%Y%m%dT%H%M%S")
 end)
