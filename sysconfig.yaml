@@ -6,6 +6,7 @@ packages:
       - firefox
       - ghostty
       - gparted
+      - proton-vpn-gtk-app
       - protonmail-bridge
       - seahorse
       - thunderbird
