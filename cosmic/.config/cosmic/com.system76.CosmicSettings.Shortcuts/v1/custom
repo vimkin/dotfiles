@@ -2,16 +2,33 @@
     (
         modifiers: [
             Super,
+            Ctrl,
+        ],
+        key: "q",
+    ): System(LockScreen),
+    (
+        modifiers: [
+            Super,
+            Ctrl,
+            Alt,
             Shift,
         ],
-        key: "m",
-    ): Minimize,
+        key: "d",
+        description: Some("Insert date at the cursor position"),
+    ): Spawn("~/.local/bin/insert-date.sh --format datetime"),
     (
         modifiers: [
             Super,
         ],
-        key: "Tab",
+        key: "Escape",
     ): Disable,
+    (
+        modifiers: [
+            Super,
+            Shift,
+        ],
+        key: "m",
+    ): Minimize,
     (
         modifiers: [
             Ctrl,
@@ -23,21 +40,11 @@
     ): Spawn("~/.local/bin/reverso-translate-clipboard.sh"),
     (
         modifiers: [
-          Ctrl,
-          Alt,
-          Shift,
+            Ctrl,
+            Alt,
+            Shift,
         ],
         key: "d",
         description: Some("Insert date at the cursor position"),
     ): Spawn("~/.local/bin/insert-date.sh"),
-    (
-        modifiers: [
-          Ctrl,
-          Alt,
-          Shift,
-          Super,
-        ],
-        key: "d",
-        description: Some("Insert date at the cursor position"),
-    ): Spawn("~/.local/bin/insert-date.sh --format datetime"),
 }
