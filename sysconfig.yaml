@@ -38,6 +38,7 @@ packages:
       - neovim
       - nushell
       - ollama-cuda
+      - perl-image-exiftool
       - poppler
       - qpdf
       - ripgrep
@@ -73,6 +74,7 @@ packages:
     - com.getpostman.Postman
     - com.github.tchx84.Flatseal
     - com.github.xournalpp.xournalpp
+    - com.obsproject.Studio
     - com.spotify.Client
     - io.github.cosmic_utils.minimon-applet # system monitor applet for COSMIC
     - io.github.ungoogled_software.ungoogled_chromium
@@ -82,5 +84,6 @@ packages:
     - org.inkscape.Inkscape
     - org.libreoffice.LibreOffice
     - org.localsend.localsend_app
+    - org.shotcut.Shotcut
     - org.videolan.VLC
     - rest.insomnia.Insomnia
