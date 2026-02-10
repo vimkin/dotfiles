@@ -14,31 +14,21 @@ packages:
       - 7zip
       - atuin
       - bat
-      - btop
       - chafa # terminal image viewer
       - cuda # needed for whisper and ollama
       - docker
       - fastfetch
       - ffmpeg
-      - flatpak
       - fzf
       - git
       - git-delta
       - github-cli
-      - gnome-keyring
       - go-yq
-      - gvfs-smb # required for COSMIC Files to detect SMB
-      - htop
-      - hunspell-de # German dictionary for spell checking
-      - hunspell-ru # Russian dictionary for spell checking
       - imagemagick
-      - jq
-      - libsecret
       - ncdu
       - neovim
       - nushell
       - ollama-cuda
-      - perl-image-exiftool
       - poppler
       - qpdf
       - ripgrep
@@ -47,12 +37,24 @@ packages:
       - stow
       - tree
       - uv # Python package and project manager
-      - wl-clipboard # clipboard support for Wayland. Commands: wl-copy and wl-paste
-      - wtype # simulate keyboard input on Wayland
-      - xdg-desktop-portal-gtk # required for Flatpak apps to smoothly work on GTK-based desktops
       - yazi
       - zellij
       - zoxide
+    system:
+      - btop
+      - flatpak
+      - gnome-keyring
+      - gvfs-smb # required for COSMIC Files to detect SMB
+      - htop
+      - hunspell-de # German dictionary for spell checking
+      - hunspell-en_us
+      - hunspell-ru # Russian dictionary for spell checking
+      - jq
+      - libsecret
+      - perl-image-exiftool
+      - wl-clipboard # clipboard support for Wayland. Commands: wl-copy and wl-paste
+      - wtype # simulate keyboard input on Wayland
+      - xdg-desktop-portal-gtk # required for Flatpak apps to smoothly work on GTK-based desktops
     fonts:
       - ttf-fira-code
       - ttf-jetbrains-mono
