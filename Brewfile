@@ -46,7 +46,7 @@ cask "inkscape" # Vector graphics editor
 cask "insomnia"
 cask "jordanbaird-ice" # Menu bar manager
 cask "keycastr" # Open-source keystroke visualiser
-cask "keymapp" # ZSA keyboard firmware flasher
+# cask "keymapp" # ZSA keyboard firmware flasher
 cask "localsend" # Easy file sharing over local network
 cask "notion"
 cask "obsidian"
@@ -55,7 +55,7 @@ cask "postman"
 cask "setapp" # Collection of apps available by subscription
 cask "spotify"
 cask "startupfolder" # Manage login items
-cask "tunnelblick" # Free and open-source OpenVPN client
+# cask "tunnelblick" # Free and open-source OpenVPN client
 cask "visual-studio-code"
 cask "vlc"
 
