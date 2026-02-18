@@ -24,12 +24,12 @@ if (not ('~/.nu_scripts' | path exists)) {
 
 def main [] {
   # Base packages for all systems
-  let base_packages = [nushell nvim tmux git fastfetch starship atuin zellij]
+  let base_packages = [atuin fastfetch git nvim nushell starship tmux zellij containers]
   # Add macOS-specific packages
   let packages = if (uname | get operating-system | str contains 'Darwin') {
     $base_packages | append [hammerspoon startup]
   } else {
-    $base_packages | append [cosmic]
+    $base_packages | append [cosmic flatpak scripts]
   }
 
   # Execute stow with the package list
