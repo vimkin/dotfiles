@@ -1,7 +1,7 @@
 (
     rules: "",
     model: "",
-    layout: "de,ru,us",
+    layout: "de,us,ru",
     variant: "us,,",
     options: None,
     repeat_delay: 600,
