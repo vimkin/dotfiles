@@ -1,5 +1,15 @@
 [
     (
+        name: "Art",
+        icon: "folder-symbolic",
+        filter: AppIds([
+            "org.gimp.GIMP",
+            "org.inkscape.Inkscape",
+            "org.kde.kdenlive",
+            "com.obsproject.Studio",
+        ]),
+    ),
+    (
         name: "Code",
         icon: "folder-symbolic",
         filter: AppIds([
@@ -31,17 +41,21 @@
             exclude: [
                 "com.mitchellh.ghostty",
                 "Alacritty",
-                "io.github.ungoogled_software.ungoogled_chromium",
                 "proton-bridge",
+                "yazi",
+                "proton-pass",
             ],
             include: [
                 "org.gnome.Totem",
                 "org.gnome.eog",
                 "simple-scan",
                 "thunderbird",
-                "proton-pass",
                 "micro",
                 "org.mozilla.Thunderbird",
+                "brave-browser",
+                "firefox",
+                "io.github.ungoogled_software.ungoogled_chromium",
+                "WebApp-Gemini2339",
             ],
         ),
     ),
@@ -63,6 +77,8 @@
                 "proton-pass",
                 "zellij",
                 "io.github.ungoogled_software.ungoogled_chromium",
+                "yazi",
+                "WebApp-Gemini2339",
             ],
             include: [
                 "gnome-language-selector",
@@ -95,6 +111,9 @@
                 "micro",
                 "io.github.ungoogled_software.ungoogled_chromium",
                 "winetricks",
+                "protontricks",
+                "yazi",
+                "WebApp-Gemini2339",
             ],
             include: [
                 "nm-connection-editor",
