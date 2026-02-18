@@ -105,7 +105,11 @@ path add ($env.HOME | path join ".dotnet" "tools")
 path add ($env.HOME | path join ".nix-profile" "bin")
 
 $env.PATH = ($env.PATH | uniq)
-$env.DOCKER_HOST = $"unix://($env.HOME)/.colima/docker.sock"
+$env.DOCKER_HOST = if $nu.os-info.name == "macos" {
+    $"unix://($env.HOME)/.colima/docker.sock"
+} else {
+    $"unix:///run/user/(id -u | str trim)/podman/podman.sock"
+}
 
 # To load from a custom file you can use:
 # source ($nu.default-config-dir | path join 'custom.nu')
