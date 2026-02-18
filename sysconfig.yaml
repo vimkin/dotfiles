@@ -16,7 +16,6 @@ packages:
       - bat
       - chafa # terminal image viewer
       - cuda # needed for whisper and ollama
-      - docker
       - fastfetch
       - ffmpeg
       - fzf
@@ -29,6 +28,7 @@ packages:
       - neovim
       - nushell
       - ollama-cuda
+      - podman
       - poppler
       - qpdf
       - ripgrep
