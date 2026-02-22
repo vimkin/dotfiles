@@ -3,26 +3,31 @@
   "logo": {
     "source": "auto",
     "padding": {
-      "right": 5
-    }
+      "right": 5,
+    },
   },
   "display": {
     "size": {
       "binaryPrefix": "si",
-      "ndigits": 2
+      "ndigits": 2,
     },
     "color": "blue",
-    "separator": "  "
+    "separator": "  ",
   },
   "modules": [
     "title",
     "separator",
+
+    // OS
     "os",
     "host",
     "kernel",
     "uptime",
     "packages",
     "shell",
+    "break",
+
+    // Desktop
     "display",
     "de",
     "wm",
@@ -33,20 +38,29 @@
     "cursor",
     "terminal",
     "terminalfont",
+    "break",
+
+    // Hardware
     "cpu",
     "gpu",
     "memory",
     "swap",
     "disk",
+    "battery",
+    "poweradapter",
+    "break",
+
+    // Network
     "publicip",
     "localip",
     "wifi",
-    "battery",
-    "poweradapter",
+    "break",
+
+    // Other
     "locale",
     "tpm",
     "version",
     "break",
-    "colors"
-  ]
+    "colors",
+  ],
 }
