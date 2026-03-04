@@ -21,6 +21,7 @@ brew "ncdu" # Disk usage analyzer with an ncurses interface
 brew "neovim"
 brew "nushell"
 brew "p7zip"
+brew "podman" # Safer alternative to Docker
 brew "python@3"
 brew "qpdf" # Command-line PDF toolkit
 brew "ripgrep" # Better search tool
