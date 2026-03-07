@@ -1,0 +1,83 @@
+services:
+  agentgateway:
+    container_name: agentgateway
+    restart: unless-stopped
+    image: cr.agentgateway.dev/agentgateway:0.12.0
+    ports:
+      - "3000:3000"
+      - "127.0.0.1:15000:15000"
+    volumes:
+      - ./config.yaml:/config.yaml
+    environment:
+      - ADMIN_ADDR=0.0.0.0:15000
+    command: ["-f", "/config.yaml"]
+    depends_on:
+      - mcp-everything
+      - mcp-time
+      - mcp-fetch
+      - mcp-aws-documentation
+      - mcp-aws-knowledge
+      - mcp-context7
+    networks:
+      - gw-net
+
+  mcp-everything:
+    container_name: mcp-everything
+    restart: unless-stopped
+    image: node:iron-slim
+    command:
+      ["npx", "-y", "@modelcontextprotocol/server-everything", "streamableHttp"]
+    environment:
+      - PORT=3001
+    networks:
+      - gw-net
+
+  mcp-time:
+    container_name: mcp-time
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: Dockerfile.mcp-time
+    networks:
+      - gw-net
+
+  mcp-fetch:
+    container_name: mcp-fetch
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: Dockerfile.mcp-fetch
+    networks:
+      - gw-net
+
+  mcp-aws-documentation:
+    container_name: mcp-aws-documentation
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: Dockerfile.mcp-aws-documentation
+    networks:
+      - gw-net
+
+  mcp-aws-knowledge:
+    container_name: mcp-aws-knowledge
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: Dockerfile.mcp-aws-knowledge
+    networks:
+      - gw-net
+
+  mcp-context7:
+    container_name: mcp-context7
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: Dockerfile.mcp-context7
+    environment:
+      - API_ACCESS_TOKEN=${CONTEXT7_API_KEY}
+    networks:
+      - gw-net
+
+networks:
+  gw-net:

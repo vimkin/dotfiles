@@ -1,0 +1,36 @@
+binds:
+  - port: 3000
+    listeners:
+      - routes:
+          - backends:
+              - mcp:
+                  targets:
+                    - name: everything
+                      mcp:
+                        host: http://mcp-everything:3001/mcp/
+                    - name: time
+                      mcp:
+                        host: http://mcp-time:3002/mcp/
+                    - name: fetch
+                      mcp:
+                        host: http://mcp-fetch:3003/mcp/
+                    - name: aws-documentation
+                      mcp:
+                        host: http://mcp-aws-documentation:3004/mcp/
+                    - name: aws-knowledge
+                      mcp:
+                        host: http://mcp-aws-knowledge:3005/mcp/
+                    - name: context7
+                      mcp:
+                        host: http://mcp-context7:3006/mcp/
+
+            policies:
+              cors:
+                allowOrigins:
+                  - "*"
+                allowHeaders:
+                  - mcp-protocol-version
+                  - content-type
+                  - cache-control
+                exposeHeaders:
+                  - Mcp-Session-Id
